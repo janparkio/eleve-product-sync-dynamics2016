@@ -39,11 +39,16 @@
         .card h3 {
             margin-top: 0;
         }
+        .total-count {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Productos Admin</h1>
+        <div id="total-products" class="total-count">Total de productos: 0</div>
         <div class="search-bar">
             <input type="text" id="search" placeholder="Buscar productos...">
         </div>
@@ -63,34 +68,39 @@
                 .then(response => response.json())
                 .then(products => {
                     const productList = document.getElementById('product-list');
-                    products.forEach(product => {
-                        const card = document.createElement('div');
-                        card.className = 'card';
-                        card.innerHTML = `
-                            <h3>${product.hs_nombre_producto}</h3>
-                            <p><strong>Slug Code:</strong> ${product.hs_slug_code}</p>
-                            <p><strong>Código Carrera:</strong> ${product.md_codigo_carrera}</p>
-                            <p><strong>ID Carrera:</strong> ${product.md_id_carrera}</p>
-                            <p><strong>Tipo Carrera:</strong> ${product.md_tipo_carrera}</p>
-                            <p><strong>Nombre Carrera:</strong> ${product.md_nombre_carrera}</p>
-                            <p><strong>Landing Value:</strong> ${product.md_landing_value}</p>
-                            <p><strong>Modalidad:</strong> ${product.modality}</p>
-                        `;
-                        productList.appendChild(card);
-                    });
+                    const totalProductsElement = document.getElementById('total-products');
+                    
+                    function displayProducts(products) {
+                        productList.innerHTML = '';
+                        products.forEach((product, index) => {
+                            const card = document.createElement('div');
+                            card.className = 'card';
+                            card.innerHTML = `
+                                <h3>${index + 1}. ${product.hs_nombre_producto}</h3>
+                                <p><strong>Slug Code:</strong> ${product.hs_slug_code}</p>
+                                <p><strong>Código Carrera:</strong> ${product.md_codigo_carrera}</p>
+                                <p><strong>ID Carrera:</strong> ${product.md_id_carrera}</p>
+                                <p><strong>Tipo Carrera:</strong> ${product.md_tipo_carrera}</p>
+                                <p><strong>Nombre Carrera:</strong> ${product.md_nombre_carrera}</p>
+                                <p><strong>Landing Value:</strong> ${product.md_landing_value}</p>
+                                <p><strong>Modalidad:</strong> ${product.modality}</p>
+                            `;
+                            productList.appendChild(card);
+                        });
+                        totalProductsElement.textContent = `Total de productos: ${products.length}`;
+                    }
+
+                    displayProducts(products);
 
                     // Filtro de búsqueda en tiempo real
                     document.getElementById('search').addEventListener('input', function () {
                         const searchTerm = this.value.toLowerCase();
-                        const cards = document.getElementsByClassName('card');
-                        Array.from(cards).forEach(card => {
-                            const text = card.textContent.toLowerCase();
-                            if (text.includes(searchTerm)) {
-                                card.style.display = '';
-                            } else {
-                                card.style.display = 'none';
-                            }
+                        const filteredProducts = products.filter(product => {
+                            return Object.values(product).some(value =>
+                                String(value).toLowerCase().includes(searchTerm)
+                            );
                         });
+                        displayProducts(filteredProducts);
                     });
                 })
                 .catch(error => console.error('Error fetching products:', error));
