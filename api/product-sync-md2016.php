@@ -3,26 +3,28 @@
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
 
-// Procesar los datos recibidos
-$hs_latest_source = $data["hs_latest_source"];
-$hs_object_id = $data["hs_object_id"];
-$tmp_product_interest_dynamics_landing = $data["tmp_product_interest_dynamics_landing"];
-$hs_latest_source_data_1 = $data["hs_latest_source_data_1"];
-$observations__dynamics_ = $data["observations__dynamics_"];
-$firstname = $data["firstname"] ?? "Sin Nombre";
-$lastname = $data["lastname"] ?? "Sin Apellido";
-$email = $data["email"];
-$phone = $data["phone"] ?? "111";
-$md_city = $data["md_city"] ?? "AS8";
-$numero_de_cedula = $data["numero_de_cedula"];
-$modalidad_de_estudio = $data["modalidad_de_estudio"];
-$product_id_dynamics = $data["product_id_dynamics"];
-$gd_student_type_antiquity = $data["gd_student_type_antiquity"] ?? "NUEVO";
-$campaign_attribution = $data["campaign_attribution"] ?? "UNKNOWN";
-$prefered_contact_channel = $data["prefered_contact_channel"];
-$tmp_md_first_json_sent = $data["tmp_md_first_json_sent"];
-$tmp_md_object_id = $data["md_object_id"];
-$codigo_origen = $data["codigo_origen"] ?? "OL-ODH";
+// Extraer las propiedades del cuerpo de la solicitud
+$properties = $data['properties'] ?? [];
+
+$hs_latest_source = $properties['hs_latest_source']['value'] ?? null;
+$hs_object_id = $properties['hs_object_id']['value'] ?? null;
+$tmp_product_interest_dynamics_landing = $properties['tmp_product_interest_dynamics_landing']['value'] ?? null;
+$hs_latest_source_data_1 = $properties['hs_latest_source_data_1']['value'] ?? null;
+$observations__dynamics_ = $properties['observations__dynamics_']['value'] ?? null;
+$firstname = $properties['firstname']['value'] ?? "Sin Nombre";
+$lastname = $properties['lastname']['value'] ?? "Sin Apellido";
+$email = $properties['email']['value'] ?? null;
+$phone = $properties['phone']['value'] ?? "111";
+$md_city = $properties['md_city']['value'] ?? "AS8";
+$numero_de_cedula = $properties['numero_de_cedula']['value'] ?? null;
+$modalidad_de_estudio = $properties['modalidad_de_estudio']['value'] ?? null;
+$product_id_dynamics = $properties['product_id_dynamics']['value'] ?? null;
+$gd_student_type_antiquity = $properties['gd_student_type_antiquity']['value'] ?? "NUEVO";
+$campaign_attribution = $properties['campaign_attribution']['value'] ?? "UNKNOWN";
+$prefered_contact_channel = $properties['prefered_contact_channel']['value'] ?? null;
+$tmp_md_first_json_sent = $properties['tmp_md_first_json_sent']['value'] ?? null;
+$tmp_md_object_id = $properties['md_object_id']['value'] ?? null;
+$codigo_origen = $properties['codigo_origen']['value'] ?? "OL-ODH";
 
 // Limpiar codigo_origen
 $codigo_origen = str_replace(' ', '', $codigo_origen);
@@ -60,7 +62,7 @@ if ($product_id_dynamics) {
 }
 
 // Preparar datos para el segundo API
-$data = [
+$data_to_send = [
     'nombre' => $firstname,
     'apellido' => $lastname,
     'telefono' => $phone,
@@ -83,20 +85,25 @@ $data = [
 // Configurar y enviar la solicitud a la segunda API
 $options = [
     'http' => [
-        'header' => "Content-type: application/json\r\n",
-        'method' => 'POST',
-        'content' => json_encode($data),
+        'header'  => "Content-type: application/json\r\n",
+        'method'  => 'POST',
+        'content' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
     ],
 ];
-$context = stream_context_create($options);
+$context  = stream_context_create($options);
 $result = file_get_contents('http://190.128.233.147:8088/api/ContactOPP/', false, $context);
+
+// Preparar respuesta del webhook
+$response_data = [
+    'hs_execution_state' => 'complete',
+    'hs_status_code' => 200,
+    'hs_server_response' => json_decode($result, true),
+    'id_carrera' => $id_carrera,
+    'md_object_id' => $tmp_md_object_id,
+    'md_json_sent' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
+];
 
 // Enviar la respuesta del webhook
 header('Content-Type: application/json');
-echo json_encode([
-    'md_json_sent' => json_encode($data),
-    'id_carrera' => $id_carrera,
-    'md_object_id' => $tmp_md_object_id,
-    'response' => json_decode($result, true),
-]);
+echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
 ?>
