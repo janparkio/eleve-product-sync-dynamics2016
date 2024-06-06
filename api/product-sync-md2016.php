@@ -122,7 +122,10 @@ if (isset($token_data['access_token'])) {
         'hs_server_response' => json_decode($result, true),
         'id_carrera' => $id_carrera,
         'md_object_id' => $tmp_md_object_id,
-        'md_json_sent' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
+        'md_json_sent' => json_encode([
+            'data_sent' => $data_to_send,
+            'server_response' => json_decode($result, true),
+        ], JSON_UNESCAPED_UNICODE),
     ];
 
     header('Content-Type: application/json');
