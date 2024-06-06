@@ -61,49 +61,80 @@ if ($product_id_dynamics) {
     // Lógica adicional según modalidad_de_estudio y tmp_product_interest_dynamics_landing
 }
 
-// Preparar datos para el segundo API
-$data_to_send = [
-    'nombre' => $firstname,
-    'apellido' => $lastname,
-    'telefono' => $phone,
-    'mail' => $email,
-    'nombre_carrera' => $nombre_carrera,
-    'id_carrera' => $id_carrera,
-    'id_sede' => '58440f3f-504d-ec11-b945-00505689be00',
-    'observaciones' => $observations__dynamics_,
-    'nrodocumento' => $numero_de_cedula,
-    'cod_universidad' => 'UA',
-    'origen' => $codigo_origen,
-    'fuente_origen' => $hs_latest_source,
-    'id_hubspot' => $hs_object_id,
-    'id_ciudad' => $md_city,
-    'new_tipodealumno' => $gd_student_type_antiquity,
-    'new_campaa' => $campaign_attribution,
-    'new_prefered_contact_channel' => $prefered_contact_channel,
-];
+// Autenticación para obtener el token
+$data = http_build_query([
+    'grant_type' => 'password',
+    'username' => 'UA',
+    'password' => 'UaPassW!',
+]);
 
-// Configurar y enviar la solicitud a la segunda API
 $options = [
     'http' => [
-        'header'  => "Content-type: application/json\r\n",
-        'method'  => 'POST',
-        'content' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => $data,
     ],
 ];
-$context  = stream_context_create($options);
-$result = file_get_contents('http://190.128.233.147:8088/api/ContactOPP/', false, $context);
 
-// Preparar respuesta del webhook
-$response_data = [
-    'hs_execution_state' => 'complete',
-    'hs_status_code' => 200,
-    'hs_server_response' => json_decode($result, true),
-    'id_carrera' => $id_carrera,
-    'md_object_id' => $tmp_md_object_id,
-    'md_json_sent' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
-];
+$context = stream_context_create($options);
+$token_response = file_get_contents('http://190.128.233.147:8088/getToken', false, $context);
+$token_data = json_decode($token_response, true);
 
-// Enviar la respuesta del webhook
-header('Content-Type: application/json');
-echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
+if (isset($token_data['access_token'])) {
+    $access_token = $token_data['access_token'];
+
+    // Datos a enviar a la segunda API
+    $data_to_send = [
+        'nombre' => $firstname,
+        'apellido' => $lastname,
+        'telefono' => $phone,
+        'mail' => $email,
+        'nombre_carrera' => $nombre_carrera,
+        'id_carrera' => $id_carrera,
+        'id_sede' => '58440f3f-504d-ec11-b945-00505689be00',
+        'observaciones' => $observations__dynamics_,
+        'nrodocumento' => $numero_de_cedula,
+        'cod_universidad' => 'UA',
+        'origen' => $codigo_origen,
+        'fuente_origen' => $hs_latest_source,
+        'id_hubspot' => $hs_object_id,
+        'id_ciudad' => $md_city,
+        'new_tipodealumno' => $gd_student_type_antiquity,
+        'new_campaa' => $campaign_attribution,
+        'new_prefered_contact_channel' => $prefered_contact_channel,
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/json\r\nAuthorization: Bearer " . $access_token . "\r\n",
+            'method' => 'POST',
+            'content' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
+        ],
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents('http://190.128.233.147:8088/api/ContactOPP/', false, $context);
+
+    // Preparar respuesta del webhook
+    $response_data = [
+        'hs_execution_state' => 'complete',
+        'hs_status_code' => 200,
+        'hs_server_response' => json_decode($result, true),
+        'id_carrera' => $id_carrera,
+        'md_object_id' => $tmp_md_object_id,
+        'md_json_sent' => json_encode($data_to_send, JSON_UNESCAPED_UNICODE),
+    ];
+
+    header('Content-Type: application/json');
+    echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
+} else {
+    // Manejo del error si no se recibe el token de acceso
+    $error_response = [
+        'hs_execution_state' => 'error',
+        'hs_status_code' => 500,
+        'hs_server_response' => 'No se recibió el token de acceso.',
+    ];
+    header('Content-Type: application/json');
+    echo json_encode($error_response, JSON_UNESCAPED_UNICODE);
+}
 ?>
