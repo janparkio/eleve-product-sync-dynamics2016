@@ -4,152 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos Admin</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .search-bar {
-            margin-bottom: 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .card {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .total-count {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .form-section {
-            margin-bottom: 20px;
-            display: none;
-        }
-        .form-section form {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .form-section form div {
-            flex: 1 1 45%;
-            margin: 10px;
-        }
-        .form-section form input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-section form button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        .form-section form button:hover {
-            background-color: #0056b3;
-        }
-        .toggle-form {
-            cursor: pointer;
-            color: #007bff;
-        }
-        .toggle-form:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .form-section form div {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Productos Admin</h1>
-        <div class="total-count" id="total-products">Total de productos: 0</div>
-        <div class="search-bar">
-            <input type="text" id="search" placeholder="Buscar productos...">
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-2xl font-bold mb-4">Productos Admin</h1>
+        <div class="text-lg mb-4" id="total-products">Total de productos: 0</div>
+        <div class="search-bar mb-4">
+            <input type="text" id="search" placeholder="Buscar productos..." class="w-full p-2 border border-gray-300 rounded">
         </div>
-        <div class="toggle-form" onclick="toggleForm()">Agregar/Editar Producto</div>
-        <div class="form-section" id="form-section">
-            <form id="product-form">
-                <div>
-                    <input type="text" id="hs_slug_code" placeholder="Slug Code" required>
+        <div class="text-blue-500 cursor-pointer mb-4" onclick="toggleForm()">Agregar Producto</div>
+        <div class="form-section mb-4" id="form-section" style="display:none;">
+            <form id="product-form" class="flex flex-wrap">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="hs_slug_code" placeholder="Slug Code" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="md_codigo_carrera" placeholder="Código Carrera" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="md_codigo_carrera" placeholder="Código Carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="hs_nombre_producto" placeholder="Nombre Producto" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="hs_nombre_producto" placeholder="Nombre Producto" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="md_id_carrera" placeholder="ID Carrera" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="md_id_carrera" placeholder="ID Carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="md_tipo_carrera" placeholder="Tipo Carrera" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <select id="md_tipo_carrera" required class="w-full p-2 border border-gray-300 rounded">
+                        <option value="">Tipo Carrera</option>
+                        <option value="PREGRADO">PREGRADO</option>
+                        <option value="PROGRAMAS ESPECIALES">PROGRAMAS ESPECIALES</option>
+                        <option value="POSGRADO">POSGRADO</option>
+                        <option value="IDIOMAS">IDIOMAS</option>
+                        <option value="WIZARD">WIZARD</option>
+                    </select>
                 </div>
-                <div>
-                    <input type="text" id="md_nombre_carrera" placeholder="Nombre Carrera" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="md_nombre_carrera" placeholder="Nombre Carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="md_landing_value" placeholder="Landing Value" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <input type="text" id="md_landing_value" placeholder="Landing Value" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
-                <div>
-                    <input type="text" id="modality" placeholder="Modalidad" required>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <select id="modality" required class="w-full p-2 border border-gray-300 rounded">
+                        <option value="">Modalidad</option>
+                        <option value="Virtual">Virtual</option>
+                        <option value="Presencial">Presencial</option>
+                    </select>
                 </div>
-                <button type="submit">Guardar Producto</button>
+                <button type="submit" id="form-button" class="bg-blue-500 text-white px-4 py-2 rounded">Crear Producto</button>
             </form>
         </div>
-        <div id="product-list">
+        <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <!-- Las tarjetas de productos se mostrarán aquí -->
         </div>
     </div>
 
     <script>
+        let editingIndex = null;
+        let originalProducts = [];
+
         // Verificación de contraseña
         const password = prompt("Ingrese la contraseña:");
         if (password !== "CapitanAmericana") {
             alert("Contraseña incorrecta.");
             window.location.href = "about:blank";
         } else {
-            fetch('https://leadwise.pro/eleve/eleve-plugins/api/json-products.php')
+            fetch('api/json-products.php')
                 .then(response => response.json())
                 .then(products => {
-                    let productList = document.getElementById('product-list');
-                    let totalProductsElement = document.getElementById('total-products');
-                    
-                    function displayProducts(products) {
+                    originalProducts = products;
+                    const productList = document.getElementById('product-list');
+                    const totalProductsElement = document.getElementById('total-products');
+
+                    function displayProducts(products, filterIndex = null) {
                         productList.innerHTML = '';
                         products.forEach((product, index) => {
+                            if (filterIndex !== null && filterIndex !== index) return;
                             const card = document.createElement('div');
-                            card.className = 'card';
+                            card.className = 'card p-4 border border-gray-300 rounded bg-gray-50';
+                            if (filterIndex === index) card.classList.add('editing-card');
                             card.innerHTML = `
-                                <h3>${index + 1}. ${product.hs_nombre_producto} [${index}]</h3>
+                                <h3 class="text-xl font-bold">${index + 1}. ${product.hs_nombre_producto} [${index}]</h3>
                                 <p><strong>Slug Code:</strong> ${product.hs_slug_code}</p>
                                 <p><strong>Código Carrera:</strong> ${product.md_codigo_carrera}</p>
                                 <p><strong>ID Carrera:</strong> ${product.md_id_carrera}</p>
@@ -157,6 +92,8 @@
                                 <p><strong>Nombre Carrera:</strong> ${product.md_nombre_carrera}</p>
                                 <p><strong>Landing Value:</strong> ${product.md_landing_value}</p>
                                 <p><strong>Modalidad:</strong> ${product.modality}</p>
+                                <button class="edit-btn bg-green-500 text-white px-2 py-1 rounded mt-2" onclick="editProduct(${index})">Editar</button>
+                                <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded mt-2" onclick="deleteProduct(${index})">Eliminar</button>
                             `;
                             productList.appendChild(card);
                         });
@@ -168,7 +105,7 @@
                     // Filtro de búsqueda en tiempo real
                     document.getElementById('search').addEventListener('input', function () {
                         const searchTerm = this.value.toLowerCase();
-                        const filteredProducts = products.filter(product => {
+                        const filteredProducts = originalProducts.filter(product => {
                             return Object.values(product).some(value =>
                                 String(value).toLowerCase().includes(searchTerm)
                             );
@@ -176,11 +113,11 @@
                         displayProducts(filteredProducts);
                     });
 
-                    // Agregar/Editar Producto
+                    // Manejo del formulario de producto
                     document.getElementById('product-form').addEventListener('submit', function (event) {
                         event.preventDefault();
 
-                        const newProduct = {
+                        const product = {
                             hs_slug_code: document.getElementById('hs_slug_code').value,
                             md_codigo_carrera: document.getElementById('md_codigo_carrera').value,
                             hs_nombre_producto: document.getElementById('hs_nombre_producto').value,
@@ -188,37 +125,117 @@
                             md_tipo_carrera: document.getElementById('md_tipo_carrera').value,
                             md_nombre_carrera: document.getElementById('md_nombre_carrera').value,
                             md_landing_value: document.getElementById('md_landing_value').value,
-                            modality: document.getElementById('modality').value
+                            modality: document.getElementById('modality').value,
                         };
 
-                        products.push(newProduct);
+                        const action = editingIndex === null ? 'add' : 'edit';
+                        const url = 'api/json-products.php';
+                        const payload = {
+                            action: action,
+                            index: editingIndex,
+                            product: product
+                        };
 
-                        fetch('https://leadwise.pro/eleve/eleve-plugins/api/json-products.php', {
+                        fetch(url, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify(products)
+                            body: JSON.stringify(payload)
                         })
                         .then(response => response.json())
                         .then(data => {
                             if (data.status === 'success') {
-                                displayProducts(products);
-                                alert('Producto agregado/actualizado exitosamente');
+                                if (editingIndex === null) {
+                                    originalProducts.push(product);
+                                } else {
+                                    originalProducts[editingIndex] = product;
+                                    const card = document.querySelector(`.card:nth-child(${editingIndex + 1})`);
+                                    card.classList.add('saved-card');
+                                    setTimeout(() => {
+                                        card.classList.remove('saved-card');
+                                    }, 2000);
+                                }
+                                displayProducts(originalProducts);
+                                document.getElementById('product-form').reset();
+                                document.getElementById('form-button').textContent = 'Crear Producto';
+                                toggleForm();
+                                editingIndex = null;
                             } else {
-                                alert('Error al agregar/actualizar el producto');
+                                alert('Error al guardar el producto.');
                             }
                         })
-                        .catch(error => console.error('Error saving product:', error));
+                        .catch(error => console.error('Error:', error));
                     });
+
+                    // Función para editar un producto
+                    window.editProduct = function(index) {
+                        editingIndex = index;
+                        const product = originalProducts[index];
+                        document.getElementById('hs_slug_code').value = product.hs_slug_code;
+                        document.getElementById('md_codigo_carrera').value = product.md_codigo_carrera;
+                        document.getElementById('hs_nombre_producto').value = product.hs_nombre_producto;
+                        document.getElementById('md_id_carrera').value = product.md_id_carrera;
+                        document.getElementById('md_tipo_carrera').value = product.md_tipo_carrera;
+                        document.getElementById('md_nombre_carrera').value = product.md_nombre_carrera;
+                        document.getElementById('md_landing_value').value = product.md_landing_value;
+                        document.getElementById('modality').value = product.modality;
+                        document.getElementById('form-button').textContent = 'Guardar Producto';
+                        document.getElementById('search').value = product.hs_nombre_producto;
+                        displayProducts(originalProducts, index);
+                        toggleForm();
+                    }
+
+                    // Función para eliminar un producto
+                    window.deleteProduct = function(index) {
+                        if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+                            fetch('api/json-products.php', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    action: 'delete',
+                                    index: index
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.status === 'success') {
+                                    originalProducts.splice(index, 1);
+                                    displayProducts(originalProducts);
+                                } else {
+                                    alert('Error al eliminar el producto.');
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                        }
+                    }
+
+                    // Función para alternar la visibilidad del formulario
+                    window.toggleForm = function() {
+                        const formSection = document.getElementById('form-section');
+                        if (editingIndex === null) {
+                            document.getElementById('form-button').textContent = 'Crear Producto';
+                            document.getElementById('product-form').reset();
+                        }
+                        formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+                    }
                 })
                 .catch(error => console.error('Error fetching products:', error));
         }
-
-        function toggleForm() {
-            const formSection = document.getElementById('form-section');
-            formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
-        }
     </script>
+    <style>
+        .editing-card {
+            border-color: blue;
+        }
+        .saved-card {
+            animation: saved-animation 2s forwards;
+        }
+        @keyframes saved-animation {
+            from { background-color: lightgreen; }
+            to { background-color: transparent; }
+        }
+    </style>
 </body>
 </html>
