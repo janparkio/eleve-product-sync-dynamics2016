@@ -1,5 +1,5 @@
 <?php
-// Definir el array de productos
+// Lista de productos de éléve, grado, posgrado, advance, eja, wizard.
 $products = [
     [
         "hs_slug_code" => "adv-dgth",
