@@ -17,20 +17,25 @@
         <div class="form-section mb-4" id="form-section" style="display:none;">
             <form id="product-form" class="flex flex-wrap">
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="hs_slug_code" placeholder="Slug Code" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="hs_slug_code" class="block text-gray-700">Slug Code</label>
+                    <input type="text" id="hs_slug_code" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="md_codigo_carrera" placeholder="Código Carrera" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="md_codigo_carrera" class="block text-gray-700">Código Carrera</label>
+                    <input type="text" id="md_codigo_carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="hs_nombre_producto" placeholder="Nombre Producto" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="hs_nombre_producto" class="block text-gray-700">Nombre Producto</label>
+                    <input type="text" id="hs_nombre_producto" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="md_id_carrera" placeholder="ID Carrera" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="md_id_carrera" class="block text-gray-700">ID Carrera</label>
+                    <input type="text" id="md_id_carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="md_tipo_carrera" class="block text-gray-700">Tipo Carrera</label>
                     <select id="md_tipo_carrera" required class="w-full p-2 border border-gray-300 rounded">
-                        <option value="">Tipo Carrera</option>
+                        <option value="">Seleccione Tipo Carrera</option>
                         <option value="PREGRADO">PREGRADO</option>
                         <option value="PROGRAMAS ESPECIALES">PROGRAMAS ESPECIALES</option>
                         <option value="POSGRADO">POSGRADO</option>
@@ -39,14 +44,17 @@
                     </select>
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="md_nombre_carrera" placeholder="Nombre Carrera" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="md_nombre_carrera" class="block text-gray-700">Nombre Carrera</label>
+                    <input type="text" id="md_nombre_carrera" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
-                    <input type="text" id="md_landing_value" placeholder="Landing Value" required class="w-full p-2 border border-gray-300 rounded">
+                    <label for="md_landing_value" class="block text-gray-700">Landing Value</label>
+                    <input type="text" id="md_landing_value" required class="w-full p-2 border border-gray-300 rounded">
                 </div>
                 <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="modality" class="block text-gray-700">Modalidad</label>
                     <select id="modality" required class="w-full p-2 border border-gray-300 rounded">
-                        <option value="">Modalidad</option>
+                        <option value="">Seleccione Modalidad</option>
                         <option value="Virtual">Virtual</option>
                         <option value="Presencial">Presencial</option>
                     </select>
@@ -146,21 +154,15 @@
                         .then(response => response.json())
                         .then(data => {
                             if (data.status === 'success') {
-                                if (editingIndex === null) {
+                                if (action === 'add') {
                                     originalProducts.push(product);
+                                    displayProducts(originalProducts);
                                 } else {
                                     originalProducts[editingIndex] = product;
-                                    const card = document.querySelector(`.card:nth-child(${editingIndex + 1})`);
-                                    card.classList.add('saved-card');
-                                    setTimeout(() => {
-                                        card.classList.remove('saved-card');
-                                    }, 2000);
+                                    displayProducts(originalProducts);
+                                    document.querySelector('.editing-card').classList.add('saved-card');
                                 }
-                                displayProducts(originalProducts);
-                                document.getElementById('product-form').reset();
-                                document.getElementById('form-button').textContent = 'Crear Producto';
                                 toggleForm();
-                                editingIndex = null;
                             } else {
                                 alert('Error al guardar el producto.');
                             }
@@ -227,7 +229,12 @@
     </script>
     <style>
         .editing-card {
-            border-color: blue;
+            border: 2px solid blue;
+            animation: highlight 0.5s forwards;
+        }
+        @keyframes highlight {
+            from { background-color: lightblue; }
+            to { background-color: transparent; }
         }
         .saved-card {
             animation: saved-animation 2s forwards;
