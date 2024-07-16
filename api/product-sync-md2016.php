@@ -42,7 +42,7 @@ $products = [];
 // Obtener productos desde la API
 // $response = file_get_contents('https://eleve-products.herokuapp.com/api/getProducts');
 // no longer using herokuapp
-$response = file_get_contents('https://leadwise.pro/eleve/eleve-plugins/api/json-products.php')
+$response = file_get_contents('https://leadwise.pro/eleve/eleve-plugins/api/json-products.php');
 $products = json_decode($response, true);
 
 // Procesar la lógica de productos
