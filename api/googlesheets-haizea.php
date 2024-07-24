@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', '/error/haizea/error.log'); // Set this to a writable location on your server
+ini_set('error_log', '/error_logs/haizea/error.log'); // Set this to a writable location on your server
 
 
 // Ensure that this script only responds to POST requests
