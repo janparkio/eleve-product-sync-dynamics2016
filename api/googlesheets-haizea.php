@@ -63,7 +63,7 @@ $values = [
         $formData['field1'] ?? '', // Nombre
         $formData['field2'] ?? '', // Apellido
         $formData['field3'] ?? '', // Email corporativo
-        $formData['field4'] ?? '', // Teléfono
+        "'" . ($formData['field4'] ?? ''), // Teléfono
         $formData['field11'] ?? '', // Nombre de la empresa
         $formData['field8'] ?? '', // Cargo/Rol
         is_array($formData['field9']) ? implode(', ', $formData['field9']) : $formData['field9'], // Sector
