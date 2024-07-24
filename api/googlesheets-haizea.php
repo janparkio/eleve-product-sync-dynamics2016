@@ -1,6 +1,12 @@
 <?php
 // googlesheets-haizea.php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', '/path/to/error.log'); // Set this to a writable location on your server
+
+
 // Ensure that this script only responds to POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -62,6 +68,7 @@ $response = curl_exec($ch);
 
 // Check for errors
 if (curl_errno($ch)) {
+    error_log('Curl error: ' . curl_error($ch));
     http_response_code(500);
     die('Curl error: ' . curl_error($ch));
 }
@@ -71,12 +78,16 @@ curl_close($ch);
 
 // Decode the response
 $result = json_decode($response, true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    error_log('JSON decode error: ' . json_last_error_msg());
+}
 
 // Check if the update was successful
 if (isset($result['updates'])) {
     http_response_code(200);
     echo json_encode(['status' => 'success', 'message' => 'Data added to sheet']);
 } else {
+    error_log('Google Sheets API error: ' . print_r($result, true));
     http_response_code(500);
     echo json_encode(['status' => 'error', 'message' => 'Failed to add data to sheet']);
 }
