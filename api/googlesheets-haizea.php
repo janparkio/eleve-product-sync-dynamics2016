@@ -36,13 +36,19 @@ try {
 
     $service = new Google_Service_Sheets($client);
 
-    // Your Google Sheet ID
+    // Google Sheet ID
     $spreadsheetId = '1D5YSB6aUce-qdcE1_sALhmnoHKVwFt8eJH183kA_dLc';
     $range = 'leads!A:I';
 
     // Get the form data
-    $formData = json_decode(file_get_contents('php://input'), true);
-    error_log("Received form data: " . json_encode($formData));
+    $raw_input = file_get_contents('php://input');
+    error_log("Raw input received: " . $raw_input);
+
+    $formData = json_decode($raw_input, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        error_log("JSON decode error: " . json_last_error_msg());
+    }
+
 
     // Prepare the values to insert
     $values = [
@@ -70,7 +76,6 @@ try {
     error_log("Data successfully appended to sheet: " . json_encode($result));
     http_response_code(200);
     echo json_encode(['status' => 'success', 'message' => 'Data added to sheet']);
-
 } catch (Exception $e) {
     error_log('Google Sheets API error: ' . $e->getMessage());
     error_log('Stack trace: ' . $e->getTraceAsString());
