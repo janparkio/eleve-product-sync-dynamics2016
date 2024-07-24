@@ -1,94 +1,79 @@
 <?php
-// googlesheets-haizea.php
+
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/haizea_error.log'); // Log in the same directory as the script
+ini_set('error_log', __DIR__ . '/haizea-google-sheets-error.log');
 
-// Ensure that this script only responds to POST requests
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    die('Method Not Allowed');
-}
+require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';
 
-// Get the raw POST data
-$json = file_get_contents('php://input');
+session_start();
 
-// Decode the JSON data
-$data = json_decode($json, true);
+try {
+    $client = new Google_Client();
+    $client->setAuthConfig(__DIR__ . '/google-oauth/client_secret_33609460872-v16h2pbd04oubdcthb4ivrnkkpk3oh4n.apps.googleusercontent.com.json');
+    $client->addScope(Google_Service_Sheets::SPREADSHEETS);
+    $client->setRedirectUri('https://leadwise.pro/eleve/eleve-plugins/api/oauth2callback.php');
 
-// Verify that the data was successfully decoded
-if (json_last_error() !== JSON_ERROR_NONE) {
-    http_response_code(400);
-    die('Invalid JSON');
-}
+    // If we're not authenticated, start the OAuth flow
+    if (!isset($_SESSION['access_token'])) {
+        $auth_url = $client->createAuthUrl();
+        error_log("No access token, redirecting to auth URL: " . $auth_url);
+        header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
+        exit;
+    }
 
-// Google Sheets API endpoint
-$sheetId = '1D5YSB6aUce-qdcE1_sALhmnoHKVwFt8eJH183kA_dLc';
-$range = 'leads!A:I';
-$apiKey = 'AIzaSyByhePTuulO2ma-3Jnb-6CNTx3VTjrc-XM';
-$url = "https://sheets.googleapis.com/v4/spreadsheets/{$sheetId}/values/{$range}:append?valueInputOption=USER_ENTERED&key={$apiKey}";
+    // Set the access token on the client
+    $client->setAccessToken($_SESSION['access_token']);
 
-// Prepare the data for Google Sheets
-$values = [
-    [
-        date('Y-m-d H:i:s'), // Fecha de Envío
-        $data['field1'] ?? '', // Nombre
-        $data['field2'] ?? '', // Apellido
-        $data['field3'] ?? '', // Email corporativo
-        $data['field4'] ?? '', // Teléfono
-        $data['field11'] ?? '', // Nombre de la empresa
-        $data['field8'] ?? '', // Cargo/Rol
-        $data['field9'] ?? '', // Sector
-        $data['field10'] ?? '' // Consultas
-    ]
-];
+    // If the access token is expired, refresh it
+    if ($client->isAccessTokenExpired()) {
+        error_log("Access token expired, refreshing...");
+        $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
+        $_SESSION['access_token'] = $client->getAccessToken();
+        error_log("New access token obtained: " . json_encode($_SESSION['access_token']));
+    }
 
-$body = json_encode(['values' => $values]);
+    $service = new Google_Service_Sheets($client);
 
-// Initialize cURL session
-$ch = curl_init($url);
+    // Your Google Sheet ID
+    $spreadsheetId = '1D5YSB6aUce-qdcE1_sALhmnoHKVwFt8eJH183kA_dLc';
+    $range = 'leads!A:I';
 
-// Set cURL options
-curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $body,
-    CURLOPT_HTTPHEADER => [
-        'Content-Type: application/json',
-        'Content-Length: ' . strlen($body)
-    ]
-]);
+    // Get the form data
+    $formData = json_decode(file_get_contents('php://input'), true);
+    error_log("Received form data: " . json_encode($formData));
 
-// Execute cURL request
-$response = curl_exec($ch);
+    // Prepare the values to insert
+    $values = [
+        [
+            date('Y-m-d H:i:s'),
+            $formData['field1'] ?? '',
+            $formData['field2'] ?? '',
+            $formData['field3'] ?? '',
+            $formData['field4'] ?? '',
+            $formData['field11'] ?? '',
+            $formData['field8'] ?? '',
+            $formData['field9'] ?? '',
+            $formData['field10'] ?? ''
+        ]
+    ];
 
-// Check for errors
-if (curl_errno($ch)) {
-    error_log('Curl error: ' . curl_error($ch));
-    http_response_code(500);
-    die('Curl error: ' . curl_error($ch));
-}
+    $body = new Google_Service_Sheets_ValueRange([
+        'values' => $values
+    ]);
+    $params = [
+        'valueInputOption' => 'USER_ENTERED'
+    ];
 
-// Close cURL session
-curl_close($ch);
-
-// Decode the response
-$result = json_decode($response, true);
-
-if (json_last_error() !== JSON_ERROR_NONE) {
-    error_log('JSON decode error: ' . json_last_error_msg());
-}
-
-// Set JSON content type header
-header('Content-Type: application/json');
-
-// Check if the update was successful
-if (isset($result['updates'])) {
+    $result = $service->spreadsheets_values->append($spreadsheetId, $range, $body, $params);
+    error_log("Data successfully appended to sheet: " . json_encode($result));
     http_response_code(200);
     echo json_encode(['status' => 'success', 'message' => 'Data added to sheet']);
-} else {
-    error_log('Google Sheets API error: ' . print_r($result, true));
+
+} catch (Exception $e) {
+    error_log('Google Sheets API error: ' . $e->getMessage());
+    error_log('Stack trace: ' . $e->getTraceAsString());
     http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Failed to add data to sheet']);
+    echo json_encode(['status' => 'error', 'message' => 'Failed to add data to sheet: ' . $e->getMessage()]);
 }
