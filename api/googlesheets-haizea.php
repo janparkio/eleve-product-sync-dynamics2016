@@ -1,11 +1,9 @@
 <?php
 // googlesheets-haizea.php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', '/error_logs/haizea/error.log'); // Set this to a writable location on your server
-
+ini_set('error_log', __DIR__ . '/haizea_error.log'); // Log in the same directory as the script
 
 // Ensure that this script only responds to POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -27,9 +25,8 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 
 // Google Sheets API endpoint
 $sheetId = '1D5YSB6aUce-qdcE1_sALhmnoHKVwFt8eJH183kA_dLc';
-$range = 'leads!A:I'; // Adjust this if your sheet name is different
-$apiKey = 'AIzaSyByhePTuulO2ma-3Jnb-6CNTx3VTjrc-XM'; // Replace with your actual API key
-
+$range = 'leads!A:I';
+$apiKey = 'AIzaSyByhePTuulO2ma-3Jnb-6CNTx3VTjrc-XM';
 $url = "https://sheets.googleapis.com/v4/spreadsheets/{$sheetId}/values/{$range}:append?valueInputOption=USER_ENTERED&key={$apiKey}";
 
 // Prepare the data for Google Sheets
@@ -47,20 +44,20 @@ $values = [
     ]
 ];
 
-$body = json_encode([
-    'values' => $values
-]);
+$body = json_encode(['values' => $values]);
 
 // Initialize cURL session
 $ch = curl_init($url);
 
 // Set cURL options
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Content-Length: ' . strlen($body)
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $body,
+    CURLOPT_HTTPHEADER => [
+        'Content-Type: application/json',
+        'Content-Length: ' . strlen($body)
+    ]
 ]);
 
 // Execute cURL request
@@ -78,9 +75,13 @@ curl_close($ch);
 
 // Decode the response
 $result = json_decode($response, true);
+
 if (json_last_error() !== JSON_ERROR_NONE) {
     error_log('JSON decode error: ' . json_last_error_msg());
 }
+
+// Set JSON content type header
+header('Content-Type: application/json');
 
 // Check if the update was successful
 if (isset($result['updates'])) {
@@ -91,4 +92,3 @@ if (isset($result['updates'])) {
     http_response_code(500);
     echo json_encode(['status' => 'error', 'message' => 'Failed to add data to sheet']);
 }
-?>
