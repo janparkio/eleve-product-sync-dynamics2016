@@ -13,12 +13,26 @@ $config = [
 ];
 
 // Function to log messages for debugging
-function debug_log($message)
+function debug_log($message, $verbose = false)
 {
-    echo date('[Y-m-d H:i:s] ') . $message . PHP_EOL;
+    if (!$verbose || (defined('DEBUG_VERBOSE') && DEBUG_VERBOSE)) {
+        echo date('[Y-m-d H:i:s] ') . $message . PHP_EOL;
+    }
 }
 
-// Updated function to make API requests
+// New function to load and match product from products.json
+function load_and_match_product($md_id_carrera)
+{
+    $products = load_json_file('products.json');
+    foreach ($products as $product) {
+        if ($product['md_id_carrera'] === $md_id_carrera) {
+            return $product;
+        }
+    }
+    return null;
+}
+
+// Updated make_api_request function with reduced logging
 function make_api_request($url, $method = 'GET', $data = null)
 {
     $ch = curl_init();
@@ -48,17 +62,13 @@ function make_api_request($url, $method = 'GET', $data = null)
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     debug_log("Making $method request to: $url");
-    debug_log("Headers: " . json_encode($headers));
+    debug_log("Headers: " . json_encode($headers), true);
     if ($data) {
-        debug_log("Data: " . json_encode($data));
+        debug_log("Data: " . json_encode($data), true);
     }
 
     $result = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    rewind($verbose);
-    $verboseLog = stream_get_contents($verbose);
-    debug_log("Verbose information:\n" . $verboseLog);
 
     if ($result === FALSE) {
         debug_log('cURL Error: ' . curl_error($ch));
@@ -69,7 +79,7 @@ function make_api_request($url, $method = 'GET', $data = null)
     curl_close($ch);
 
     debug_log("Response Code: $http_code");
-    debug_log("Response Body: $result");
+    debug_log("Response Body: " . substr($result, 0, 100) . "...", true); // Log only the first 100 characters
 
     if ($http_code >= 400) {
         debug_log("HTTP Error: $http_code. Response: $result");
@@ -129,33 +139,16 @@ function get_origins()
     return make_api_request($config['new_api_url'] . '/consulta-origenes');
 }
 
-// Function to sync lead with new API (seems that only accepts GET and the parameters)
-// Comment: It's likely that the API expects the data to be sent in a specific format in the request body, even for a GET request (which is unusual but not impossible).
-// function sync_lead_new($lead_data)
-// {
-//     global $config;
-
-//     // Try GET request first
-//     debug_log("Attempting GET request for sync-lead");
-//     $result = make_api_request($config['new_api_url'] . '/sync-lead', 'GET', $lead_data);
-
-//     if ($result === null) {
-//         // If GET fails, try POST
-//         debug_log("GET request failed. Attempting POST request for sync-lead");
-//         $result = make_api_request($config['new_api_url'] . '/sync-lead', 'POST', $lead_data);
-//     }
-
-//     return $result;
-// }
-
-function sync_lead_new($lead_data) {
+// Updated sync_lead_new function with reduced logging
+function sync_lead_new($lead_data)
+{
     global $config;
-    
+
     $url = $config['new_api_url'] . '/sync-lead';
-    
+
     // Initialize cURL session
     $ch = curl_init($url);
-    
+
     // Set cURL options
     curl_setopt_array($ch, [
         CURLOPT_CUSTOMREQUEST => "GET",  // Use GET method as per API specification
@@ -168,37 +161,37 @@ function sync_lead_new($lead_data) {
         CURLOPT_SSL_VERIFYPEER => false,  // Disable SSL verification (remove this in production)
         CURLOPT_VERBOSE => true  // Enable verbose output for debugging
     ]);
-    
+
     // Capture verbose output
     $verbose = fopen('php://temp', 'w+');
     curl_setopt($ch, CURLOPT_STDERR, $verbose);
-    
+
     // Execute the request
     $response = curl_exec($ch);
-    
+
     // Check for errors
     if (curl_errno($ch)) {
         debug_log("cURL Error: " . curl_error($ch));
         curl_close($ch);
         return null;
     }
-    
+
     // Get the HTTP status code
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    
+
     // Close cURL resource
     curl_close($ch);
-    
+
     // Log verbose output
     rewind($verbose);
     $verboseLog = stream_get_contents($verbose);
-    debug_log("Verbose curl output: " . $verboseLog);
-    
-    debug_log("API Response (HTTP $http_code): $response");
-    
+    debug_log("Verbose curl output: " . $verboseLog, true);
+
+    debug_log("API Response (HTTP $http_code): " . substr($response, 0, 100) . "...", true);
+
     // Check if the response is valid JSON
     $result = json_decode($response, true);
-    
+
     if (json_last_error() === JSON_ERROR_NONE) {
         debug_log("Successfully synced with new API.");
         return $result;
@@ -215,14 +208,15 @@ function sync_lead_old($lead_data)
     return make_api_request($config['old_api_url'], 'POST', $lead_data);
 }
 
-// Function to map old product data to new program data
-function map_product_to_program($old_product, $programs)
+// Updated function to map product data to new program data
+function map_product_to_program($product, $programs)
 {
     foreach ($programs as $program) {
-        if ($program['new_codigoprograma'] === $old_product['md_codigo_carrera']) {
+        if ($program['new_codigoprograma'] === $product['md_codigo_carrera']) {
             return [
                 'new_programaid' => $program['new_programaid'],
                 'new_clasificacion' => $program['new_clasificacion'],
+                'new_name' => $program['new_name'],
                 // Add any other fields you need
             ];
         }
@@ -230,113 +224,179 @@ function map_product_to_program($old_product, $programs)
     return null;
 }
 
-// Main function to handle product synchronization
-function sync_product($product_data)
+// Function to process HubSpot data
+// dateadded: 05/08/2024 11:20PM ASU
+function process_hubspot_data($request_body)
 {
-    // Sync with old API
-    // $old_result = sync_lead_old($old_lead_data);
-    // if ($old_result) {
-    //     debug_log("Successfully synced with old API.");
-    // } else {
-    //     debug_log("Failed to sync with old API.");
-    // }
+    $data = json_decode($request_body, true);
+    $properties = $data['properties'] ?? [];
 
-    debug_log("Starting product sync for: " . $product_data['hs_nombre_producto']);
+    $hubspot_data = [
+        'hs_latest_source' => $properties['hs_latest_source']['value'] ?? null,
+        'hs_object_id' => $properties['hs_object_id']['value'] ?? null,
+        'tmp_product_interest_dynamics_landing' => $properties['tmp_product_interest_dynamics_landing']['value'] ?? null,
+        'hs_latest_source_data_1' => $properties['hs_latest_source_data_1']['value'] ?? null,
+        'observations__dynamics_' => $properties['observations__dynamics_']['value'] ?? null,
+        'firstname' => $properties['firstname']['value'] ?? "Sin Nombre",
+        'lastname' => $properties['lastname']['value'] ?? "Sin Apellido",
+        'email' => $properties['email']['value'] ?? null,
+        'phone' => $properties['phone']['value'] ?? "111",
+        'md_city' => $properties['md_city']['value'] ?? "AS8",
+        'numero_de_cedula' => $properties['numero_de_cedula']['value'] ?? null,
+        'modalidad_de_estudio' => $properties['modalidad_de_estudio']['value'] ?? null,
+        'product_id_dynamics' => $properties['product_id_dynamics']['value'] ?? null,
+        'gd_student_type_antiquity' => $properties['gd_student_type_antiquity']['value'] ?? "NUEVO",
+        'campaign_attribution' => $properties['campaign_attribution']['value'] ?? "UNKNOWN",
+        'prefered_contact_channel' => $properties['prefered_contact_channel']['value'] ?? null,
+        'tmp_md_first_json_sent' => $properties['tmp_md_first_json_sent']['value'] ?? null,
+        'tmp_md_object_id' => $properties['md_object_id']['value'] ?? null,
+        'codigo_origen' => str_replace(' ', '', $properties['codigo_origen']['value'] ?? "OL-ODH"),
+    ];
+
+    // Validate numero_de_cedula
+    if (!$hubspot_data['numero_de_cedula'] || $hubspot_data['numero_de_cedula'] < 500000 || $hubspot_data['numero_de_cedula'] > 9999999) {
+        $hubspot_data['numero_de_cedula'] = $hubspot_data['hs_object_id'];
+    }
+
+    return $hubspot_data;
+}
+
+// Main function to handle product synchronization
+function sync_product($hubspot_data)
+{
+    debug_log("Starting product sync for HubSpot object ID: " . $hubspot_data['hs_object_id']);
+
+    // Load and match product from products.json
+    $matched_product = load_and_match_product($hubspot_data['product_id_dynamics']);
+    if (!$matched_product) {
+        debug_log("Failed to match product in products.json. Aborting sync.");
+        return null;
+    }
+    debug_log("Matched product: " . $matched_product['md_nombre_carrera']);
 
     // Get programs from new API
     $programs = get_programs();
     if (!$programs) {
         debug_log("Failed to fetch programs. Aborting sync.");
-        return;
+        return null;
     }
+
+    // Map product to new program
+    $mapped_program = map_product_to_program($matched_product, $programs);
+    if (!$mapped_program) {
+        debug_log("Failed to map product to program. Aborting sync.");
+        return null;
+    }
+    debug_log("Mapped to program: " . $mapped_program['new_name']);
 
     // Get origins from new API
     $origins = get_origins();
     if (!$origins) {
         debug_log("Failed to fetch origins. Aborting sync.");
-        return;
+        return null;
     }
 
     // Load cities from JSON file
     $cities = load_json_file('cities.json');
     if (!$cities) {
         debug_log("Failed to load cities. Aborting sync.");
-        return;
-    }
-
-    // Map old product to new program
-    $mapped_program = map_product_to_program($product_data, $programs);
-    if (!$mapped_program) {
-        debug_log("Failed to map product to program. Aborting sync.");
-        return;
+        return null;
     }
 
     // Match city
-    $new_ciudad_value = match_city($product_data['id_ciudad'], $cities);
+    $new_ciudad_value = match_city($hubspot_data['md_city'], $cities);
     if (!$new_ciudad_value) {
         debug_log("Failed to match city. Using default value.");
-        $new_ciudad_value = $product_data['_new_ciudad_value']; // Use default value if matching fails
+        $new_ciudad_value = $hubspot_data['md_city']; // Use original value if matching fails
     }
 
     // Match origin
-    $new_origen_value = match_origin($product_data['fuente_origen'], $origins);
+    $new_origen_value = match_origin($hubspot_data['codigo_origen'], $origins);
     if (!$new_origen_value) {
         debug_log("Failed to match origin. Using default value.");
         $new_origen_value = '1ef5b097-d2f1-ee11-a1fe-002248371974'; // Use default value if matching fails
     }
 
-    // In the sync_product function, update the $new_lead_data array to match the Swagger documentation:
+    // Prepare lead data for new API
     $new_lead_data = [
-        "leadid" => "", // Leave empty for new leads
-        "firstname" => $product_data['firstname'],
-        "lastname" => $product_data['lastname'],
-        "mobilephone" => $product_data['phone'],
-        "new_identificacion" => $product_data['numero_de_cedula'],
-        "emailaddress1" => $product_data['email'],
+        "leadid" => "",
+        "firstname" => $hubspot_data['firstname'],
+        "lastname" => $hubspot_data['lastname'],
+        "mobilephone" => $hubspot_data['phone'],
+        "new_identificacion" => $hubspot_data['numero_de_cedula'],
+        "emailaddress1" => $hubspot_data['email'],
         "_new_ciudad_value" => $new_ciudad_value,
         "_new_origen_value" => $new_origen_value,
-        "crd9f_fuenteoriginal" => $product_data['fuente_origen'],
+        "crd9f_fuenteoriginal" => $hubspot_data['hs_latest_source'],
         "_new_programa_value" => $mapped_program['new_programaid'],
         "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", // You may want to make this dynamic
-        "new_idhubspot" => $product_data['id_hubspot'],
+        "new_idhubspot" => $hubspot_data['hs_object_id'],
         "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'],
-        "preferredcontactmethodcode" => 1,
+        "preferredcontactmethodcode" => $hubspot_data['prefered_contact_channel'] ?? 1,
         "statecode" => 0,
         "statuscode" => 100000002,
         "ownerid" => "" // You may need to provide a valid owner ID
     ];
 
-
     // Sync with new API
     $new_result = sync_lead_new($new_lead_data);
     if ($new_result) {
         debug_log("Successfully synced with new API.");
-        debug_log("New API response: " . json_encode($new_result));
+        debug_log("New API response: " . json_encode($new_result), true);
     } else {
         debug_log("Failed to sync with new API.");
+        return null;
     }
+
+    // Prepare response similar to the old script
+    $response_data = [
+        'hs_execution_state' => 'complete',
+        'hs_status_code' => 200,
+        'hs_server_response' => $new_result,
+        'id_carrera' => $matched_product['md_id_carrera'],
+        'md_object_id' => $hubspot_data['tmp_md_object_id'],
+        'md_json_sent' => json_encode([
+            'data_sent' => $new_lead_data,
+            'server_response' => $new_result,
+        ], JSON_UNESCAPED_UNICODE),
+    ];
+
+    return $response_data;
+}
+
+// Main execution
+$request_body = file_get_contents('php://input');
+$hubspot_data = process_hubspot_data($request_body);
+
+// Set to true to enable verbose logging
+define('DEBUG_VERBOSE', false);
+
+$result = sync_product($hubspot_data);
+
+if ($result) {
+    header('Content-Type: application/json');
+    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+} else {
+    $error_response = [
+        'hs_execution_state' => 'error',
+        'hs_status_code' => 500,
+        'hs_server_response' => 'Failed to sync lead.',
+    ];
+    header('Content-Type: application/json');
+    echo json_encode($error_response, JSON_UNESCAPED_UNICODE);
 }
 
 // Example usage
-$product_data = [
-    'hs_slug_code' => 'gd-digr',
-    'md_codigo_carrera' => 'DIG',
-    'hs_nombre_producto' => 'Grado - Diseño Grafico',
-    'md_id_carrera' => '5d1e9fce-2c4d-ec11-b945-00505689be00',
-    'md_landing_value' => 'Diseño Gráfico',
-    'modality' => 'Presencial',
-    'firstname' => 'John',
-    'lastname' => 'Leads Prueba',
-    'phone' => '595123456789',
-    'email' => 'john.doe@example.com',
-    'numero_de_cedula' => '123456789',
-    'origen' => '000000',
-    'fuente_origen' => 'OL-5585',
-    'id_hubspot' => '000001',
-    'ciudad' => 'Borja',
-    'id_ciudad' => 'BO16',
-    '_new_ciudad_value' => '3a361e6e-1a24-ef11-840b-000d3ac19288', // Default value
-    'new_prefered_contact_channel' => '1',
-];
-
-sync_product($product_data);
+/*
+    $product_data = [
+        'md_id_carrera' => 'a51e9fce-2c4d-ec11-b945-00505689be00', // This should match an entry in products.json
+        'firstname' => 'John',
+        'lastname' => 'Leads Prueba',
+        'phone' => '595123456789',
+        'email' => 'john.doe@example.com',
+        'numero_de_cedula' => '123456789',
+        'fuente_origen' => 'OL-5585',
+        'id_hubspot' => '000001',
+        'id_ciudad' => 'BO16',
+    ];
+*/
