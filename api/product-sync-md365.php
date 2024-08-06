@@ -329,7 +329,7 @@ function sync_product($hubspot_data)
         "_new_origen_value" => $new_origen_value, //optional
         "crd9f_fuenteoriginal" => $hubspot_data['hs_latest_source'], //optional
         "_new_programa_value" => $mapped_program['new_programaid'], //optional
-        // "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", //optional
+        "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", //optional
         "new_idhubspot" => $hubspot_data['hs_object_id'], //optional
         "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'], //optional
         "preferredcontactmethodcode" => 1, //$hubspot_data['prefered_contact_channel'] -> not ready yet
