@@ -1,9 +1,10 @@
 <?php
+// product-sync-md2026.php
 // Obtener el contenido de la solicitud POST
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
 
-// Extraer las propiedades del cuerpo de la solicitud
+// Extraer las propiedades HubSpot del cuerpo de la solicitud
 $properties = $data['properties'] ?? [];
 
 $hs_latest_source = $properties['hs_latest_source']['value'] ?? null;
