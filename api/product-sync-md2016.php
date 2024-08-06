@@ -1,5 +1,5 @@
 <?php
-// product-sync-md2026.php
+// product-sync-md2016.php
 // Obtener el contenido de la solicitud POST
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
