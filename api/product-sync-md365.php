@@ -355,7 +355,7 @@ function sync_product($hubspot_data)
         'hs_server_response' => $new_result,
         'id_carrera' => $matched_product['md_id_carrera'],
         'md_object_id' => $hubspot_data['tmp_md_object_id'],
-        'md_json_sent' => json_encode([
+        'tmp_json_sent_md365' => json_encode([
             'data_sent' => $new_lead_data,
             'server_response' => $new_result,
         ], JSON_UNESCAPED_UNICODE),
