@@ -319,22 +319,23 @@ function sync_product($hubspot_data)
 
     // Prepare lead data for new API
     $new_lead_data = [
-        "leadid" => "",
+        "leadid" => "", //optional
         "firstname" => $hubspot_data['firstname'],
         "lastname" => $hubspot_data['lastname'],
         "mobilephone" => $hubspot_data['phone'],
-        "new_identificacion" => $hubspot_data['numero_de_cedula'],
+        "new_identificacion" => $hubspot_data['numero_de_cedula'], //optional
         "emailaddress1" => $hubspot_data['email'],
-        "_new_ciudad_value" => $new_ciudad_value,
-        "_new_origen_value" => $new_origen_value,
-        "crd9f_fuenteoriginal" => $hubspot_data['hs_latest_source'],
-        "_new_programa_value" => $mapped_program['new_programaid'],
-        "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", // You may want to make this dynamic
-        "new_idhubspot" => $hubspot_data['hs_object_id'],
-        "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'],
+        "_new_ciudad_value" => $new_ciudad_value, //optional
+        "_new_origen_value" => $new_origen_value, //optional
+        "crd9f_fuenteoriginal" => $hubspot_data['hs_latest_source'], //optional
+        "_new_programa_value" => $mapped_program['new_programaid'], //optional
+        // "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", //optional
+        "new_idhubspot" => $hubspot_data['hs_object_id'], //optional
+        "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'], //optional
         "preferredcontactmethodcode" => 1, //$hubspot_data['prefered_contact_channel'] -> not ready yet
         "statecode" => 0,
         "statuscode" => 100000002,
+
         "ownerid" => "" // You may need to provide a valid owner ID
     ];
 
