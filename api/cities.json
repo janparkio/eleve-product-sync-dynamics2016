@@ -1,0 +1,1759 @@
+[
+  {
+    "new_name": "25 de Diciembre",
+    "matched_city_name": "Veinticinco de Diciembre",
+    "id_ciudad": "VE201",
+    "new_ciudadesid": "14361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VEINTICINCO DE DICIEMBRE"
+  },
+  {
+    "new_name": "3 De Febrero",
+    "matched_city_name": "Tres de Febrero",
+    "id_ciudad": "TR194",
+    "new_ciudadesid": "16361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "3_FEBRERO"
+  },
+  {
+    "new_name": "Abaí",
+    "matched_city_name": "Pedro Juan Caballero",
+    "id_ciudad": "PE141",
+    "new_ciudadesid": "18361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ABAÍ"
+  },
+  {
+    "new_name": "Acahay",
+    "matched_city_name": "Acahay",
+    "id_ciudad": "AC222",
+    "new_ciudadesid": "1a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ACAHAY"
+  },
+  {
+    "new_name": "Alberdi",
+    "matched_city_name": "Alberdi",
+    "id_ciudad": "AL2",
+    "new_ciudadesid": "1c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ALBERDI"
+  },
+  {
+    "new_name": "Alto Verá",
+    "matched_city_name": "Alto Verá",
+    "id_ciudad": "AL3",
+    "new_ciudadesid": "1e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ALTO VERÁ"
+  },
+  {
+    "new_name": "Altos",
+    "matched_city_name": "Altos",
+    "id_ciudad": "AL4",
+    "new_ciudadesid": "20361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ALTOS"
+  },
+  {
+    "new_name": "Antequera",
+    "matched_city_name": "Antequera",
+    "id_ciudad": "AN5",
+    "new_ciudadesid": "22361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ANTEQUERA"
+  },
+  {
+    "new_name": "Aregua",
+    "matched_city_name": "Aregua",
+    "id_ciudad": "AR6",
+    "new_ciudadesid": "24361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "AREGUA"
+  },
+  {
+    "new_name": "Arroyos Y Esteros",
+    "matched_city_name": "Arroyos y Esteros",
+    "id_ciudad": "AR7",
+    "new_ciudadesid": "26361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ARROYOS Y ESTEROS"
+  },
+  {
+    "new_name": "Asunción",
+    "matched_city_name": "Asunción",
+    "id_ciudad": "AS8",
+    "new_ciudadesid": "28361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ASUNCION"
+  },
+  {
+    "new_name": "Atyra",
+    "matched_city_name": "Atyra",
+    "id_ciudad": "AT9",
+    "new_ciudadesid": "2a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ATYRA"
+  },
+  {
+    "new_name": "Ayolas",
+    "matched_city_name": "Ayolas",
+    "id_ciudad": "AY10",
+    "new_ciudadesid": "2c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "AYOLAS"
+  },
+  {
+    "new_name": "Azotey",
+    "matched_city_name": "Azotey",
+    "id_ciudad": "AZ251",
+    "new_ciudadesid": "2e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "AZOTEY"
+  },
+  {
+    "new_name": "Bahia Negra",
+    "matched_city_name": "Bahía Negra",
+    "id_ciudad": "BA11",
+    "new_ciudadesid": "30361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BAHIA NEGRA"
+  },
+  {
+    "new_name": "Belen",
+    "matched_city_name": "Belén",
+    "id_ciudad": "BE12",
+    "new_ciudadesid": "32361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BELEN"
+  },
+  {
+    "new_name": "Bella Vista",
+    "matched_city_name": "Bella Vista - Amambay",
+    "id_ciudad": "BE13",
+    "new_ciudadesid": "34361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BELLA VISTAI"
+  },
+  {
+    "new_name": "Bella Vista",
+    "matched_city_name": "Bella Vista - Amambay",
+    "id_ciudad": "BE13",
+    "new_ciudadesid": "36361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BELLA VISTA"
+  },
+  {
+    "new_name": "Benjamin Aceval",
+    "matched_city_name": "Benjamín Aceval",
+    "id_ciudad": "BE15",
+    "new_ciudadesid": "38361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BENJAMÍN ACEVAL"
+  },
+  {
+    "new_name": "Borja",
+    "matched_city_name": "Borja",
+    "id_ciudad": "BO16",
+    "new_ciudadesid": "3a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BORJA"
+  },
+  {
+    "new_name": "Buena Vista",
+    "matched_city_name": "Buena Vista",
+    "id_ciudad": "BU17",
+    "new_ciudadesid": "3c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "BUENA VISTA"
+  },
+  {
+    "new_name": "Caacupé",
+    "matched_city_name": "Caacupé",
+    "id_ciudad": "CA18",
+    "new_ciudadesid": "3e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAACUPÉ"
+  },
+  {
+    "new_name": "Caaguazú",
+    "matched_city_name": "Caaguazú",
+    "id_ciudad": "CA19",
+    "new_ciudadesid": "40361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAAGUAZÚ"
+  },
+  {
+    "new_name": "Caapucú",
+    "matched_city_name": "Caapucú",
+    "id_ciudad": "CA223",
+    "new_ciudadesid": "42361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAAPUCÚ"
+  },
+  {
+    "new_name": "Caazapá",
+    "matched_city_name": "Caazapá",
+    "id_ciudad": "CA20",
+    "new_ciudadesid": "44361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAAZAPÁ"
+  },
+  {
+    "new_name": "Cambyretá",
+    "matched_city_name": "Cambyretá",
+    "id_ciudad": "CA21",
+    "new_ciudadesid": "46361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAMBYRETÁ"
+  },
+  {
+    "new_name": "Cap. Carmelo Peralta",
+    "matched_city_name": "Capitán Carmelo Peralta",
+    "id_ciudad": "CA22",
+    "new_ciudadesid": "48361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAP. CARMELO PERALTA"
+  },
+  {
+    "new_name": "Capiata",
+    "matched_city_name": "Capiatá",
+    "id_ciudad": "CA24",
+    "new_ciudadesid": "4a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPIATA"
+  },
+  {
+    "new_name": "Capiíbary",
+    "matched_city_name": "Capiibary",
+    "id_ciudad": "CA23",
+    "new_ciudadesid": "4c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPI´IVARY"
+  },
+  {
+    "new_name": "Capitán Bado",
+    "matched_city_name": "Capitán Bado",
+    "id_ciudad": "CA25",
+    "new_ciudadesid": "4e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPITAN BADO"
+  },
+  {
+    "new_name": "Capitán Mauricio Jose Troche",
+    "matched_city_name": "Capitán Mauricio José Troche",
+    "id_ciudad": "CA26",
+    "new_ciudadesid": "50361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPITÁN MAURICIO JOSÉ TROCHE"
+  },
+  {
+    "new_name": "Capitán Meza",
+    "matched_city_name": "Capitán Meza",
+    "id_ciudad": "CA27",
+    "new_ciudadesid": "52361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPITÁN MEZA"
+  },
+  {
+    "new_name": "Capitán Miranda",
+    "matched_city_name": "Capitán Miranda",
+    "id_ciudad": "CA28",
+    "new_ciudadesid": "54361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CAPITÁN MIRANDA"
+  },
+  {
+    "new_name": "Caraguatay",
+    "matched_city_name": "Caraguatay",
+    "id_ciudad": "CA29",
+    "new_ciudadesid": "56361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CARAGUATAY"
+  },
+  {
+    "new_name": "Carapeguá",
+    "matched_city_name": "Carapeguá",
+    "id_ciudad": "CA224",
+    "new_ciudadesid": "58361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CARAPEGUÁ"
+  },
+  {
+    "new_name": "Carayaó",
+    "matched_city_name": "Carayaó",
+    "id_ciudad": "CA30",
+    "new_ciudadesid": "5a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CARAYAÓ"
+  },
+  {
+    "new_name": "Carlos Antonio López",
+    "matched_city_name": "Carlos Antonio López",
+    "id_ciudad": "CA31",
+    "new_ciudadesid": "5c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CARLOS ANTONIO LÓPEZ"
+  },
+  {
+    "new_name": "Carmen Del Paraná",
+    "matched_city_name": "Carmen del Paraná",
+    "id_ciudad": "CA32",
+    "new_ciudadesid": "5e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CARMEN DEL PARANÁ"
+  },
+  {
+    "new_name": "Cerrito",
+    "matched_city_name": "Cerrito",
+    "id_ciudad": "CE33",
+    "new_ciudadesid": "60361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CERRITO"
+  },
+  {
+    "new_name": "Choré",
+    "matched_city_name": "Choré",
+    "id_ciudad": "CH34",
+    "new_ciudadesid": "62361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CHORÉ"
+  },
+  {
+    "new_name": "Ciudad Del Este",
+    "matched_city_name": "Ciudad del Este",
+    "id_ciudad": "CI35",
+    "new_ciudadesid": "64361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CIUDAD DEL ESTE"
+  },
+  {
+    "new_name": "Colonia Fernheim",
+    "matched_city_name": "Colonia Fernheim",
+    "id_ciudad": "CO36",
+    "new_ciudadesid": "66361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "COLONIA FERNHEIM"
+  },
+  {
+    "new_name": "Concepción",
+    "matched_city_name": "Concepción",
+    "id_ciudad": "CO37",
+    "new_ciudadesid": "68361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CONCEPCION"
+  },
+  {
+    "new_name": "Coronel Bogado",
+    "matched_city_name": "Coronel Bogado",
+    "id_ciudad": "CO38",
+    "new_ciudadesid": "6a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CORONEL BOGADO"
+  },
+  {
+    "new_name": "Coronel Martínez",
+    "matched_city_name": "Coronel Martínez",
+    "id_ciudad": "CO39",
+    "new_ciudadesid": "6c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CORONEL MARTÍNEZ"
+  },
+  {
+    "new_name": "Coronel Oviedo",
+    "matched_city_name": "Coronel Oviedo",
+    "id_ciudad": "CO40",
+    "new_ciudadesid": "6e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CORONEL OVIEDO"
+  },
+  {
+    "new_name": "Corpus Christi",
+    "matched_city_name": "Corpus Christi",
+    "id_ciudad": "CO240",
+    "new_ciudadesid": "70361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CORPUS CHR"
+  },
+  {
+    "new_name": "Curuguaty",
+    "matched_city_name": "Curuguaty",
+    "id_ciudad": "CU241",
+    "new_ciudadesid": "72361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "CURUGUATY"
+  },
+  {
+    "new_name": "Desmochados",
+    "matched_city_name": "Desmochados",
+    "id_ciudad": "DE41",
+    "new_ciudadesid": "74361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DESMOCHADOS"
+  },
+  {
+    "new_name": "Doctor Bottrell",
+    "matched_city_name": "Dr. Botrell",
+    "id_ciudad": "DO42",
+    "new_ciudadesid": "76361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR BOTRELL"
+  },
+  {
+    "new_name": "Doctor Cecilio Báez",
+    "matched_city_name": "Dr. Cecilio Baez",
+    "id_ciudad": "DO43",
+    "new_ciudadesid": "78361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR CECILIO BÁEZ"
+  },
+  {
+    "new_name": "Doctor J. Eulogio Estigarribia",
+    "matched_city_name": "Dr J. Eulogio Estigarribia",
+    "id_ciudad": "DO44",
+    "new_ciudadesid": "7a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR J. EULOGIO ESTIGARRIBIA"
+  },
+  {
+    "new_name": "Doctor Juan Manuel Frutos",
+    "matched_city_name": "Dr Juan Manuel Frutos",
+    "id_ciudad": "DO45",
+    "new_ciudadesid": "7c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR JUAN MANUEL FRUTOS"
+  },
+  {
+    "new_name": "Doctor Moisés S. Bertoni",
+    "matched_city_name": "Dr Moisés S. Bertoni",
+    "id_ciudad": "DO46",
+    "new_ciudadesid": "7e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR MOISÉS S. BERTONI"
+  },
+  {
+    "new_name": "Doctor Pedro P. Peña",
+    "matched_city_name": "Dr. Pedro P. Peña",
+    "id_ciudad": "DO47",
+    "new_ciudadesid": "80361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOCTOR PEDRO P. PEÑA"
+  },
+  {
+    "new_name": "Domingo Martínez De Irala",
+    "matched_city_name": "Domingo Martínez de Irala",
+    "id_ciudad": "DO48",
+    "new_ciudadesid": "82361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DOMINGO MARTÍNEZ DE IRALA"
+  },
+  {
+    "new_name": "Dr. Blas A. Garay",
+    "matched_city_name": "Dr. Blás A. Garay",
+    "id_ciudad": "DR49",
+    "new_ciudadesid": "84361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DR. BLÀS A. GARAY"
+  },
+  {
+    "new_name": "Dr. José Falcón",
+    "matched_city_name": "Dr. José Falcón",
+    "id_ciudad": "DR50",
+    "new_ciudadesid": "86361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DR. JOSÉ FALCÓN"
+  },
+  {
+    "new_name": "Dr. Juan Leon Mallorquin",
+    "matched_city_name": "Dr. Juan León Mallorquín",
+    "id_ciudad": "DR51",
+    "new_ciudadesid": "88361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "DR. JUAN LEÓN MALLORQUÍN"
+  },
+  {
+    "new_name": "Edelira",
+    "matched_city_name": "Edelira",
+    "id_ciudad": "ED52",
+    "new_ciudadesid": "8a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "EDELIRA"
+  },
+  {
+    "new_name": "Emboscada",
+    "matched_city_name": "Emboscada",
+    "id_ciudad": "EM53",
+    "new_ciudadesid": "8c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "EMBOSCADA"
+  },
+  {
+    "new_name": "Encarnación",
+    "matched_city_name": "Encarnación",
+    "id_ciudad": "EM54",
+    "new_ciudadesid": "8e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ENCARNACIÓN"
+  },
+  {
+    "new_name": "Escobar",
+    "matched_city_name": "Escobar",
+    "id_ciudad": "ES225",
+    "new_ciudadesid": "90361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ESCOBAR"
+  },
+  {
+    "new_name": "Eusebio Ayala",
+    "matched_city_name": "Eusebio Ayala",
+    "id_ciudad": "EU55",
+    "new_ciudadesid": "92361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "EUSEBIO AYALA"
+  },
+  {
+    "new_name": "Felix Perez Cardozo",
+    "matched_city_name": "Félix Pérez Cardozo",
+    "id_ciudad": "FE56",
+    "new_ciudadesid": "94361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FÉLIX PÉREZ CARDOZO"
+  },
+  {
+    "new_name": "Fernando De La Mora",
+    "matched_city_name": "Fernando de la Mora",
+    "id_ciudad": "FE57",
+    "new_ciudadesid": "96361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FERNANDO DE LA MORA"
+  },
+  {
+    "new_name": "Filadelfia",
+    "matched_city_name": "Filadelfia",
+    "id_ciudad": "FI58",
+    "new_ciudadesid": "98361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FILADELFIA"
+  },
+  {
+    "new_name": "FN. Pozo Hondo Py",
+    "matched_city_name": "Fn. Pozo Hondo PY",
+    "id_ciudad": "FN59",
+    "new_ciudadesid": "9a361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FN. POZO HONDO PY"
+  },
+  {
+    "new_name": "Fram",
+    "matched_city_name": "Fram",
+    "id_ciudad": "FR60",
+    "new_ciudadesid": "9c361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FRAM"
+  },
+  {
+    "new_name": "Fuerte Olimpo",
+    "matched_city_name": "Fuerte Olimpo",
+    "id_ciudad": "FU61",
+    "new_ciudadesid": "9e361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FUERTE OLIMPO"
+  },
+  {
+    "new_name": "Fulgencio Yegros",
+    "matched_city_name": "Fulgencio Yegros",
+    "id_ciudad": "FU62",
+    "new_ciudadesid": "a0361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FULGENCIO YEGROS"
+  },
+  {
+    "new_name": "Fulgencio Yegros",
+    "matched_city_name": "Fulgencio Yegros",
+    "id_ciudad": "FU62",
+    "new_ciudadesid": "a2361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "FULGENCIO"
+  },
+  {
+    "new_name": "General Artigas",
+    "matched_city_name": "General Artigas",
+    "id_ciudad": "GE66",
+    "new_ciudadesid": "a4361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL ARTIGAS"
+  },
+  {
+    "new_name": "General Bernardino Caballero",
+    "matched_city_name": "Gral. Bernardino Caballero",
+    "id_ciudad": "GE227",
+    "new_ciudadesid": "a6361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL BERNARDINO CABALLERO"
+  },
+  {
+    "new_name": "General Delgado",
+    "matched_city_name": "General Delgado",
+    "id_ciudad": "GE67",
+    "new_ciudadesid": "a8361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL DELGADO"
+  },
+  {
+    "new_name": "General Elizardo Aquino",
+    "matched_city_name": "General Elizardo Aquino",
+    "id_ciudad": "GE68",
+    "new_ciudadesid": "aa361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL ELIZARDO AQUINO"
+  },
+  {
+    "new_name": "General Eugenio A. Garay",
+    "matched_city_name": "General Eugenio A. Garay",
+    "id_ciudad": "GE69",
+    "new_ciudadesid": "ac361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL EUGENIO A. GARAY"
+  },
+  {
+    "new_name": "General Eugenio A. Garay",
+    "matched_city_name": "General Eugenio A. Garay",
+    "id_ciudad": "GE69",
+    "new_ciudadesid": "ae361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL EUGENIO A. GARAY B"
+  },
+  {
+    "new_name": "General Higinio Morinigo",
+    "matched_city_name": "General Higinio Morínigo",
+    "id_ciudad": "GE71",
+    "new_ciudadesid": "b0361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL HIGINIO MORÍNIGO"
+  },
+  {
+    "new_name": "General Isidoro Resquín",
+    "matched_city_name": "General Isidoro Resquín",
+    "id_ciudad": "GE72",
+    "new_ciudadesid": "b2361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL ISIDORO RESQUÍN"
+  },
+  {
+    "new_name": "General J. M. Bruguéz",
+    "matched_city_name": "General",
+    "id_ciudad": "GE64",
+    "new_ciudadesid": "b4361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL J. M. BRUGUÈZ"
+  },
+  {
+    "new_name": "General José Eduvigis Díaz",
+    "matched_city_name": "General José Eduvigis Díaz",
+    "id_ciudad": "GE74",
+    "new_ciudadesid": "b6361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GENERAL JOSÉ EDUVIGIS DÍAZ"
+  },
+  {
+    "new_name": "Gral. Álvarez Del Puente Kyjhá",
+    "matched_city_name": "Gral. Francisco Caballero Álvarez",
+    "id_ciudad": "GR242",
+    "new_ciudadesid": "b8361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GRAL. ÀLVAREZ DEL PUENTE KYJHÁ"
+  },
+  {
+    "new_name": "Gral. Francisco Caballero Álvarez",
+    "matched_city_name": "Gral. Francisco Caballero Álvarez",
+    "id_ciudad": "GR242",
+    "new_ciudadesid": "ba361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GRAL.FCA"
+  },
+  {
+    "new_name": "Guajaybí",
+    "matched_city_name": "Guayaibí",
+    "id_ciudad": "GU76",
+    "new_ciudadesid": "bc361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GUAYAIBÍ"
+  },
+  {
+    "new_name": "Guarambare",
+    "matched_city_name": "Guarambaré",
+    "id_ciudad": "GU75",
+    "new_ciudadesid": "be361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GUARAMBARE"
+  },
+  {
+    "new_name": "Guazú Cuá",
+    "matched_city_name": "Guazú Cuá",
+    "id_ciudad": "GU77",
+    "new_ciudadesid": "c1361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "GUAZÚ CUÁ"
+  },
+  {
+    "new_name": "Hernandarias",
+    "matched_city_name": "Hernandarias",
+    "id_ciudad": "HE78",
+    "new_ciudadesid": "c3361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "HERNANDARIAS"
+  },
+  {
+    "new_name": "Hohenau",
+    "matched_city_name": "Hohenau",
+    "id_ciudad": "HO79",
+    "new_ciudadesid": "c5361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "HOHENAU"
+  },
+  {
+    "new_name": "Horqueta",
+    "matched_city_name": "Horqueta",
+    "id_ciudad": "HO80",
+    "new_ciudadesid": "c7361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "HORQUETA"
+  },
+  {
+    "new_name": "Humaitá",
+    "matched_city_name": "Humaitá",
+    "id_ciudad": "HU81",
+    "new_ciudadesid": "c9361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "HUMAITÁ"
+  },
+  {
+    "new_name": "Independencia",
+    "matched_city_name": "Independencia",
+    "id_ciudad": "IN82",
+    "new_ciudadesid": "cb361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "INDEPENDENCIA"
+  },
+  {
+    "new_name": "Iruña",
+    "matched_city_name": "Iruña",
+    "id_ciudad": "IR83",
+    "new_ciudadesid": "cd361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "IRUÑA"
+  },
+  {
+    "new_name": "Isla Pucú",
+    "matched_city_name": "Isla Pucú",
+    "id_ciudad": "IS84",
+    "new_ciudadesid": "cf361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ISLA PUCÚ"
+  },
+  {
+    "new_name": "Isla Umbú",
+    "matched_city_name": "Isla Umbú",
+    "id_ciudad": "IS85",
+    "new_ciudadesid": "d1361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ISLA UMBÚ"
+  },
+  {
+    "new_name": "Ita",
+    "matched_city_name": "Itá",
+    "id_ciudad": "IT86",
+    "new_ciudadesid": "d3361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITA"
+  },
+  {
+    "new_name": "Itacurubí De La Cordillera",
+    "matched_city_name": "Itacurubí de La Cordillera",
+    "id_ciudad": "IT87",
+    "new_ciudadesid": "d5361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITACURUBÍ DE LA CORDILLERA"
+  },
+  {
+    "new_name": "Itacurubí Del Rosario",
+    "matched_city_name": "Itacurubí del Rosario",
+    "id_ciudad": "IT88",
+    "new_ciudadesid": "d7361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITACURUBÍ DEL ROSARIO"
+  },
+  {
+    "new_name": "Itanará",
+    "matched_city_name": "Itanará",
+    "id_ciudad": "IT243",
+    "new_ciudadesid": "d9361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITANARÁ"
+  },
+  {
+    "new_name": "Itapé",
+    "matched_city_name": "Itapé",
+    "id_ciudad": "IT90",
+    "new_ciudadesid": "db361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITAPÉ"
+  },
+  {
+    "new_name": "Itapúa Poty",
+    "matched_city_name": "Itapúa Poty",
+    "id_ciudad": "IT91",
+    "new_ciudadesid": "dd361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITAPÚA POTY"
+  },
+  {
+    "new_name": "Itaugua",
+    "matched_city_name": "Itauguá",
+    "id_ciudad": "IT92",
+    "new_ciudadesid": "df361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITAUGUA"
+  },
+  {
+    "new_name": "Iturbe",
+    "matched_city_name": "Iturbe",
+    "id_ciudad": "IT93",
+    "new_ciudadesid": "e1361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ITURBE"
+  },
+  {
+    "new_name": "Jesús",
+    "matched_city_name": "Jesús",
+    "id_ciudad": "JE94",
+    "new_ciudadesid": "e3361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JESÚS"
+  },
+  {
+    "new_name": "José A. Fassardi",
+    "matched_city_name": "Jose A. Fassardi",
+    "id_ciudad": "JO95",
+    "new_ciudadesid": "e5361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JOSÉ A. FASSARDI"
+  },
+  {
+    "new_name": "José Domingo Ocampos",
+    "matched_city_name": "José Domingo Ocampos",
+    "id_ciudad": "JO96",
+    "new_ciudadesid": "e7361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JOSÉ DOMINGO OCAMPOS"
+  },
+  {
+    "new_name": "José Leandro Oviedo",
+    "matched_city_name": "José Leandro Oviedo",
+    "id_ciudad": "JO97",
+    "new_ciudadesid": "e9361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JOSÉ LEANDRO OVIEDO"
+  },
+  {
+    "new_name": "Juan Augusto Saldivar",
+    "matched_city_name": "Julian Augusto Saldiviar",
+    "id_ciudad": "JU98",
+    "new_ciudadesid": "eb361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JUAN AUGUSTO SALDIVAR"
+  },
+  {
+    "new_name": "Juan De Mena",
+    "matched_city_name": "Juan de Mena",
+    "id_ciudad": "JU99",
+    "new_ciudadesid": "ed361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JUAN DE MENA"
+  },
+  {
+    "new_name": "Juan E. O'Leary",
+    "matched_city_name": "Juan Emilio O'Leary",
+    "id_ciudad": "JU100",
+    "new_ciudadesid": "ef361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "JUAN E. O'LEARY"
+  },
+  {
+    "new_name": "Katueté",
+    "matched_city_name": "Katueté",
+    "id_ciudad": "KA244",
+    "new_ciudadesid": "f1361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "KATUETÉ"
+  },
+  {
+    "new_name": "La Colmena",
+    "matched_city_name": "La Colmena",
+    "id_ciudad": "LA228",
+    "new_ciudadesid": "f3361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LA COLMENA"
+  },
+  {
+    "new_name": "La Paloma",
+    "matched_city_name": "La Paloma",
+    "id_ciudad": "LA245",
+    "new_ciudadesid": "f5361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LA PALOMA"
+  },
+  {
+    "new_name": "La Pastora",
+    "matched_city_name": "La Pastora",
+    "id_ciudad": "LA101",
+    "new_ciudadesid": "f7361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LA PASTORA"
+  },
+  {
+    "new_name": "La Paz",
+    "matched_city_name": "La Paz",
+    "id_ciudad": "LA102",
+    "new_ciudadesid": "f9361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LA PAZ"
+  },
+  {
+    "new_name": "Lambare",
+    "matched_city_name": "Lambaré",
+    "id_ciudad": "LA103",
+    "new_ciudadesid": "fb361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LAMBARE"
+  },
+  {
+    "new_name": "Laureles",
+    "matched_city_name": "Laureles",
+    "id_ciudad": "LA104",
+    "new_ciudadesid": "fd361e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LAURELES"
+  },
+  {
+    "new_name": "Liberación",
+    "matched_city_name": "Liberación",
+    "id_ciudad": "LI105",
+    "new_ciudadesid": "00371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LIBERACIÓN"
+  },
+  {
+    "new_name": "Lima",
+    "matched_city_name": "Lima",
+    "id_ciudad": "LI106",
+    "new_ciudadesid": "02371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LIMA"
+  },
+  {
+    "new_name": "Limpio",
+    "matched_city_name": "Limpio",
+    "id_ciudad": "LI107",
+    "new_ciudadesid": "04371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LIMPIO"
+  },
+  {
+    "new_name": "Loma Grande",
+    "matched_city_name": "Loma Grande",
+    "id_ciudad": "LO108",
+    "new_ciudadesid": "06371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LOMA GRANDE"
+  },
+  {
+    "new_name": "Loma Plata",
+    "matched_city_name": "Loma Plata",
+    "id_ciudad": "LO109",
+    "new_ciudadesid": "08371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LOMA PLATA"
+  },
+  {
+    "new_name": "Loreto",
+    "matched_city_name": "Loreto",
+    "id_ciudad": "LO110",
+    "new_ciudadesid": "0a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LORETO"
+  },
+  {
+    "new_name": "Los Cedrales",
+    "matched_city_name": "Los Cedrales",
+    "id_ciudad": "LO111",
+    "new_ciudadesid": "0c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LOS CEDRALES"
+  },
+  {
+    "new_name": "Luque",
+    "matched_city_name": "Luque",
+    "id_ciudad": "LU112",
+    "new_ciudadesid": "0e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "LUQUE"
+  },
+  {
+    "new_name": "Maciel",
+    "matched_city_name": "Maciel",
+    "id_ciudad": "MA113",
+    "new_ciudadesid": "10371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MACIEL"
+  },
+  {
+    "new_name": "Mariano Roque Alonso",
+    "matched_city_name": "Mariano Roque Alonso",
+    "id_ciudad": "MA114",
+    "new_ciudadesid": "12371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MARIANO ROQUE ALONSO"
+  },
+  {
+    "new_name": "Mariscal Francisco Solano López",
+    "matched_city_name": "Mcal. Francisco S. López",
+    "id_ciudad": "MA115",
+    "new_ciudadesid": "14371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MARISCAL FRANCISCO SOLANO"
+  },
+  {
+    "new_name": "Mariscal José F. Estigarribia",
+    "matched_city_name": "Mariscal Estigarribia",
+    "id_ciudad": "MA116",
+    "new_ciudadesid": "16371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MARISCAL JOSÉ F ESTIGARRIBIA"
+  },
+  {
+    "new_name": "Mayor José J. Martinez",
+    "matched_city_name": "Mayor José J. Martínez",
+    "id_ciudad": "MA117",
+    "new_ciudadesid": "18371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MAYOR JOSÉ J. MARTÍNEZ"
+  },
+  {
+    "new_name": "Mayor Julio D. Otaño",
+    "matched_city_name": "Mayor Otaño",
+    "id_ciudad": "MA118",
+    "new_ciudadesid": "1a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MAYOR JULIO D. OTAÑO"
+  },
+  {
+    "new_name": "Mayor Pablo Lagerenza",
+    "matched_city_name": "Mayor Pablo Lagerenza",
+    "id_ciudad": "MA119",
+    "new_ciudadesid": "1c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MAYOR PABLO LAGERENZA"
+  },
+  {
+    "new_name": "Mbaracayú",
+    "matched_city_name": "Mbaracayú",
+    "id_ciudad": "MB120",
+    "new_ciudadesid": "1e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MBARACAYÚ"
+  },
+  {
+    "new_name": "Mbocayaty Del Guairá",
+    "matched_city_name": "Mbocayaty",
+    "id_ciudad": "MB121",
+    "new_ciudadesid": "20371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MBOCAYATY DEL GUAIRÁ"
+  },
+  {
+    "new_name": "Mbocayaty Del Yhaguy",
+    "matched_city_name": "Mbocayaty del Yhaguy",
+    "id_ciudad": "MB122",
+    "new_ciudadesid": "22371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MBOCAYATY DEL YHAGUY"
+  },
+  {
+    "new_name": "Mbuyapey",
+    "matched_city_name": "Mbuyapey",
+    "id_ciudad": "MB229",
+    "new_ciudadesid": "24371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MBUYAPEY"
+  },
+  {
+    "new_name": "Minga Guazú",
+    "matched_city_name": "Minga Guazú",
+    "id_ciudad": "MI123",
+    "new_ciudadesid": "26371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MINGA GUAZÚ"
+  },
+  {
+    "new_name": "Minga Porá",
+    "matched_city_name": "Minga Porá",
+    "id_ciudad": "MI124",
+    "new_ciudadesid": "28371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "MINGA PORÁ"
+  },
+  {
+    "new_name": "Nanawa",
+    "matched_city_name": "Nanawa",
+    "id_ciudad": "NA126",
+    "new_ciudadesid": "2a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NANAWA"
+  },
+  {
+    "new_name": "Naranjal",
+    "matched_city_name": "Naranjal",
+    "id_ciudad": "NA127",
+    "new_ciudadesid": "2c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NARANJAL"
+  },
+  {
+    "new_name": "Natalicio Talavera",
+    "matched_city_name": "Natalicio Talavera",
+    "id_ciudad": "NA128",
+    "new_ciudadesid": "2e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NATALICIO TALAVERA"
+  },
+  {
+    "new_name": "Natalio",
+    "matched_city_name": "Natalio",
+    "id_ciudad": "NA129",
+    "new_ciudadesid": "30371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NATALIO"
+  },
+  {
+    "new_name": "Neuland",
+    "matched_city_name": "Neuland",
+    "id_ciudad": "NE131",
+    "new_ciudadesid": "32371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NEULAND"
+  },
+  {
+    "new_name": "Nueva Alborada",
+    "matched_city_name": "Nueva Alborada",
+    "id_ciudad": "NU132",
+    "new_ciudadesid": "35371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA ALBORADA"
+  },
+  {
+    "new_name": "Nueva Colombia",
+    "matched_city_name": "Nueva Colombia",
+    "id_ciudad": "NU133",
+    "new_ciudadesid": "37371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA COLOMBIA"
+  },
+  {
+    "new_name": "Nueva Esperanza",
+    "matched_city_name": "Nueva Esperanza",
+    "id_ciudad": "NU246",
+    "new_ciudadesid": "39371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA ESPERANZA"
+  },
+  {
+    "new_name": "Nueva Germania",
+    "matched_city_name": "Nueva Germania",
+    "id_ciudad": "NU134",
+    "new_ciudadesid": "3b371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA GERMANIA"
+  },
+  {
+    "new_name": "Nueva Italia",
+    "matched_city_name": "Nueva Italia",
+    "id_ciudad": "NU135",
+    "new_ciudadesid": "3d371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA ITALIA"
+  },
+  {
+    "new_name": "Nueva Londres",
+    "matched_city_name": "Nueva Londres",
+    "id_ciudad": "NU136",
+    "new_ciudadesid": "3f371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "NUEVA LONDRES"
+  },
+  {
+    "new_name": "Ñacunday",
+    "matched_city_name": "Ñacunday",
+    "id_ciudad": "NA125",
+    "new_ciudadesid": "41371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ÑACUNDAY"
+  },
+  {
+    "new_name": "Ñemby",
+    "matched_city_name": "Ñemby",
+    "id_ciudad": "NE130",
+    "new_ciudadesid": "43371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "Ñemby"
+  },
+  {
+    "new_name": "Ñumí",
+    "matched_city_name": "Ñumí",
+    "id_ciudad": "NU137",
+    "new_ciudadesid": "46371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ÑUMÍ"
+  },
+  {
+    "new_name": "Obligado",
+    "matched_city_name": "Obligado",
+    "id_ciudad": "OB138",
+    "new_ciudadesid": "48371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "OBLIGADO"
+  },
+  {
+    "new_name": "Paraguarí",
+    "matched_city_name": "Paraguarí",
+    "id_ciudad": "PA230",
+    "new_ciudadesid": "4a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PARAGUARÍ"
+  },
+  {
+    "new_name": "Paso De Patria",
+    "matched_city_name": "Paso de Patria",
+    "id_ciudad": "PA139",
+    "new_ciudadesid": "4c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PASO DE PATRIA"
+  },
+  {
+    "new_name": "Paso Yobái",
+    "matched_city_name": "Paso Yobái",
+    "id_ciudad": "PA140",
+    "new_ciudadesid": "4e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PASO YOVAI"
+  },
+  {
+    "new_name": "Pedro Juan Caballero",
+    "matched_city_name": "Pedro Juan Caballero",
+    "id_ciudad": "PE141",
+    "new_ciudadesid": "50371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PEDRO JUAN CABALLERO"
+  },
+  {
+    "new_name": "Pilar",
+    "matched_city_name": "Pilar",
+    "id_ciudad": "PI142",
+    "new_ciudadesid": "52371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PILAR"
+  },
+  {
+    "new_name": "Pirapó",
+    "matched_city_name": "Pirapó",
+    "id_ciudad": "PI143",
+    "new_ciudadesid": "56371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PIRAPÓ"
+  },
+  {
+    "new_name": "Pirayú",
+    "matched_city_name": "Pirayú",
+    "id_ciudad": "PI231",
+    "new_ciudadesid": "58371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PIRAYÚ"
+  },
+  {
+    "new_name": "Piribebuy",
+    "matched_city_name": "Piribebuy",
+    "id_ciudad": "PI144",
+    "new_ciudadesid": "5a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PIRIBEBUY"
+  },
+  {
+    "new_name": "Pozo Colorado",
+    "matched_city_name": "Pozo Colorado",
+    "id_ciudad": "PO145",
+    "new_ciudadesid": "5c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "POZO COLORADO"
+  },
+  {
+    "new_name": "Presidente Franco",
+    "matched_city_name": "Presidente Franco",
+    "id_ciudad": "PR146",
+    "new_ciudadesid": "5e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PRESIDENTE FRANCO"
+  },
+  {
+    "new_name": "Primero De Marzo",
+    "matched_city_name": "Primero de Marzo",
+    "id_ciudad": "PR147",
+    "new_ciudadesid": "60371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PRIMERO DE MARZO"
+  },
+  {
+    "new_name": "Puerto Casado",
+    "matched_city_name": "Puerto Casado",
+    "id_ciudad": "PU148",
+    "new_ciudadesid": "62371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PUERTO CASADO"
+  },
+  {
+    "new_name": "Puerto Pinasco",
+    "matched_city_name": "Puerto Pinasco",
+    "id_ciudad": "PU149",
+    "new_ciudadesid": "64371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "PUERTO PINASCO"
+  },
+  {
+    "new_name": "Quiindy",
+    "matched_city_name": "Quiindy",
+    "id_ciudad": "QU232",
+    "new_ciudadesid": "66371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "QUIINDY"
+  },
+  {
+    "new_name": "Quyquyhó",
+    "matched_city_name": "Quyquyhó",
+    "id_ciudad": "QU233",
+    "new_ciudadesid": "68371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "QUYQUYHÓ"
+  },
+  {
+    "new_name": "R.I. 3 Corrales",
+    "matched_city_name": "R. I. Tres Corrales",
+    "id_ciudad": "R.150",
+    "new_ciudadesid": "6a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "R. I. TRES CORRALES"
+  },
+  {
+    "new_name": "Raúl Arsenio Oviedo",
+    "matched_city_name": "Raúl Arsenio Oviedo",
+    "id_ciudad": "RA151",
+    "new_ciudadesid": "6c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "RAÚL ARSENIO OVIEDO"
+  },
+  {
+    "new_name": "Repatriación",
+    "matched_city_name": "Repatriación",
+    "id_ciudad": "RE152",
+    "new_ciudadesid": "6e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "REPATRIACIÓN"
+  },
+  {
+    "new_name": "Saltos Del Guaira",
+    "matched_city_name": "Salto del Guairá",
+    "id_ciudad": "SA247",
+    "new_ciudadesid": "70371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAL_GUAIRA"
+  },
+  {
+    "new_name": "San Alberto",
+    "matched_city_name": "San Alberto",
+    "id_ciudad": "SA153",
+    "new_ciudadesid": "72371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN ALBERTO"
+  },
+  {
+    "new_name": "San Antonio",
+    "matched_city_name": "San Antonio",
+    "id_ciudad": "SA154",
+    "new_ciudadesid": "74371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN ANTONIO"
+  },
+  {
+    "new_name": "San Bernardino",
+    "matched_city_name": "San Bernardino",
+    "id_ciudad": "SA155",
+    "new_ciudadesid": "76371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN BERNARDINO"
+  },
+  {
+    "new_name": "San Carlos",
+    "matched_city_name": "San Carlos del Apa",
+    "id_ciudad": "SA156",
+    "new_ciudadesid": "78371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN CARLOS"
+  },
+  {
+    "new_name": "San Cosme y Damián",
+    "matched_city_name": "San Cosme y Damián",
+    "id_ciudad": "SA157",
+    "new_ciudadesid": "7a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN COSME Y DAMIÁN"
+  },
+  {
+    "new_name": "San Cristóbal",
+    "matched_city_name": "San Cristóbal",
+    "id_ciudad": "SA158",
+    "new_ciudadesid": "7c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN CRISTÓBAL"
+  },
+  {
+    "new_name": "San Estanislao",
+    "matched_city_name": "San Estanislao",
+    "id_ciudad": "SA159",
+    "new_ciudadesid": "7e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN ESTANISLAO"
+  },
+  {
+    "new_name": "San Ignacio",
+    "matched_city_name": "San Ignacio",
+    "id_ciudad": "SA160",
+    "new_ciudadesid": "80371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN IGNACIO"
+  },
+  {
+    "new_name": "San Joaquín",
+    "matched_city_name": "San Joaquín",
+    "id_ciudad": "SA161",
+    "new_ciudadesid": "82371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JOAQUÍN"
+  },
+  {
+    "new_name": "San José De Los Arroyos",
+    "matched_city_name": "San José de los Arroyos",
+    "id_ciudad": "SA162",
+    "new_ciudadesid": "84371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JOSÉ DE LOS ARROYOS"
+  },
+  {
+    "new_name": "San José Obrero",
+    "matched_city_name": "San José Obrero",
+    "id_ciudad": "SA163",
+    "new_ciudadesid": "86371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JOSÉ OBRERO"
+  },
+  {
+    "new_name": "San Juan Bautista",
+    "matched_city_name": "San Juan Bautista",
+    "id_ciudad": "SA165",
+    "new_ciudadesid": "88371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JUAN BTTA."
+  },
+  {
+    "new_name": "San Juan Bautista De Ñeembucú",
+    "matched_city_name": "San Juan Bautista del Neembucú",
+    "id_ciudad": "SA164",
+    "new_ciudadesid": "8a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JUAN BAUTISTA DEL ÑEEMBUCÚ"
+  },
+  {
+    "new_name": "San Juan Del Paraná",
+    "matched_city_name": "San Juan del Paraná",
+    "id_ciudad": "SA166",
+    "new_ciudadesid": "8c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JUAN DEL PARANÁ"
+  },
+  {
+    "new_name": "San Juan Nepomuceno",
+    "matched_city_name": "San Juan Nepomuceno",
+    "id_ciudad": "SA167",
+    "new_ciudadesid": "8e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN JUAN NEPOMUCENO"
+  },
+  {
+    "new_name": "San Lazaro",
+    "matched_city_name": "San Lázaro",
+    "id_ciudad": "SA168",
+    "new_ciudadesid": "90371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN LAZARO"
+  },
+  {
+    "new_name": "San Lorenzo",
+    "matched_city_name": "San Lorenzo",
+    "id_ciudad": "SA169",
+    "new_ciudadesid": "92371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN LORENZO"
+  },
+  {
+    "new_name": "San Miguel",
+    "matched_city_name": "San Miguel",
+    "id_ciudad": "SA170",
+    "new_ciudadesid": "94371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN MIGUEL"
+  },
+  {
+    "new_name": "San Pablo",
+    "matched_city_name": "San Pablo",
+    "id_ciudad": "SA171",
+    "new_ciudadesid": "96371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN PABLO"
+  },
+  {
+    "new_name": "San Patricio",
+    "matched_city_name": "San Patricio",
+    "id_ciudad": "SA172",
+    "new_ciudadesid": "98371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN PATRICIO"
+  },
+  {
+    "new_name": "San Pedro",
+    "matched_city_name": "San Pedro",
+    "id_ciudad": "SA173",
+    "new_ciudadesid": "9a371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN PEDRO"
+  },
+  {
+    "new_name": "San Pedro Del Paraná",
+    "matched_city_name": "San Pedro del Paraná",
+    "id_ciudad": "SA174",
+    "new_ciudadesid": "9c371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN PEDRO DEL PARANÁ"
+  },
+  {
+    "new_name": "San Rafael Del Paraná",
+    "matched_city_name": "San Rafael del Paraná",
+    "id_ciudad": "SA175",
+    "new_ciudadesid": "9e371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN RAFAEL DEL PARANÁ"
+  },
+  {
+    "new_name": "San Roque Gonzalez",
+    "matched_city_name": "San Roque González de Santa Cruz",
+    "id_ciudad": "SA234",
+    "new_ciudadesid": "a0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN ROQUE GONZÁLEZ SANTA CRUZ"
+  },
+  {
+    "new_name": "San Salvador",
+    "matched_city_name": "San Salvador",
+    "id_ciudad": "SA176",
+    "new_ciudadesid": "a2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAN SALVADOR"
+  },
+  {
+    "new_name": "Santa Elena",
+    "matched_city_name": "Santa Elena",
+    "id_ciudad": "SA177",
+    "new_ciudadesid": "a4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA ELENA"
+  },
+  {
+    "new_name": "Santa Fe Del Paraná",
+    "matched_city_name": "Santa Fe del Paraná",
+    "id_ciudad": "SA178",
+    "new_ciudadesid": "a6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA FE DEL PARANÁ"
+  },
+  {
+    "new_name": "Santa María",
+    "matched_city_name": "Santa María",
+    "id_ciudad": "SA179",
+    "new_ciudadesid": "a8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA MARÍA"
+  },
+  {
+    "new_name": "Santa Rita",
+    "matched_city_name": "Santa Rita",
+    "id_ciudad": "SA180",
+    "new_ciudadesid": "aa371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA RITA"
+  },
+  {
+    "new_name": "Santa Rosa",
+    "matched_city_name": "Santa Rosa",
+    "id_ciudad": "SA181",
+    "new_ciudadesid": "ac371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA ROSA"
+  },
+  {
+    "new_name": "Santa Rosa Del Aguaray",
+    "matched_city_name": "Santa Rosa del Aguaray",
+    "id_ciudad": "SA182",
+    "new_ciudadesid": "ae371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA ROSA DEL AGUARAY"
+  },
+  {
+    "new_name": "Santa Rosa Del Mbutuy",
+    "matched_city_name": "Santa Rosa del Mbutuy",
+    "id_ciudad": "SA183",
+    "new_ciudadesid": "b0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA ROSA DEL MBUTUY"
+  },
+  {
+    "new_name": "Santa Rosa Del Monday",
+    "matched_city_name": "Santa Rosa del Monday",
+    "id_ciudad": "SA184",
+    "new_ciudadesid": "b2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTA ROSA DEL MONDAY"
+  },
+  {
+    "new_name": "Santiago",
+    "matched_city_name": "Santiago",
+    "id_ciudad": "SA185",
+    "new_ciudadesid": "b4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SANTIAGO"
+  },
+  {
+    "new_name": "Sapucai",
+    "matched_city_name": "Sapucai",
+    "id_ciudad": "SA235",
+    "new_ciudadesid": "b6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SAPUCAI"
+  },
+  {
+    "new_name": "Sgto. José Félix López",
+    "matched_city_name": "Sargento José Félix López",
+    "id_ciudad": "SA252",
+    "new_ciudadesid": "b8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SARGENTOJF"
+  },
+  {
+    "new_name": "Simón Bolívar",
+    "matched_city_name": "Simón Bolívar",
+    "id_ciudad": "SI186",
+    "new_ciudadesid": "ba371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "SIMÓN BOLÍVAR"
+  },
+  {
+    "new_name": "Tacuaras",
+    "matched_city_name": "Tacuaras",
+    "id_ciudad": "TA187",
+    "new_ciudadesid": "bc371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TACUARAS"
+  },
+  {
+    "new_name": "Tacuatí",
+    "matched_city_name": "Tacuatí",
+    "id_ciudad": "TA188",
+    "new_ciudadesid": "be371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TACUATÍ"
+  },
+  {
+    "new_name": "Tavaí",
+    "matched_city_name": "Tavaí",
+    "id_ciudad": "TA189",
+    "new_ciudadesid": "c0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TAVAÍ"
+  },
+  {
+    "new_name": "Tavapy",
+    "matched_city_name": "Tavapy",
+    "id_ciudad": "TA253",
+    "new_ciudadesid": "c2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TAVAPY"
+  },
+  {
+    "new_name": "Tebicuary",
+    "matched_city_name": "Tebicuary",
+    "id_ciudad": "TE190",
+    "new_ciudadesid": "c4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TEBICUARY"
+  },
+  {
+    "new_name": "Tebicuary-Mí",
+    "matched_city_name": "Tebicuary-mí",
+    "id_ciudad": "TE236",
+    "new_ciudadesid": "c6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TEBICUARY-MÍ"
+  },
+  {
+    "new_name": "Tembiaporá",
+    "matched_city_name": "Tembiaporá",
+    "id_ciudad": "TE191",
+    "new_ciudadesid": "c8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TEMBIAPORÀ"
+  },
+  {
+    "new_name": "Tobatí",
+    "matched_city_name": "Tobatí",
+    "id_ciudad": "TO192",
+    "new_ciudadesid": "ca371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TOBATÍ"
+  },
+  {
+    "new_name": "Tomás Romero Pereira",
+    "matched_city_name": "Tomás Romero Pereira",
+    "id_ciudad": "TO193",
+    "new_ciudadesid": "cc371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TOMÁS ROMERO PEREIRA"
+  },
+  {
+    "new_name": "Trinidad",
+    "matched_city_name": "Trinidad",
+    "id_ciudad": "TR195",
+    "new_ciudadesid": "ce371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TRINIDAD"
+  },
+  {
+    "new_name": "Tte. 1ro Manuel Irala Fernandez",
+    "matched_city_name": "Tte. Irala Fernández",
+    "id_ciudad": "TT196",
+    "new_ciudadesid": "d0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TTE. 1º MANUEL IRALA FERNÁNDEZ"
+  },
+  {
+    "new_name": "Tte. Esteban Martinez",
+    "matched_city_name": "Tte. Esteban Martínez",
+    "id_ciudad": "TT197",
+    "new_ciudadesid": "d2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "TTE. ESTEBAN MARTÍNEZ"
+  },
+  {
+    "new_name": "Unión",
+    "matched_city_name": "Unión",
+    "id_ciudad": "UN198",
+    "new_ciudadesid": "d4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "UNIÓN"
+  },
+  {
+    "new_name": "Valenzuela",
+    "matched_city_name": "Valenzuela",
+    "id_ciudad": "VA199",
+    "new_ciudadesid": "d6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VALENZUELA"
+  },
+  {
+    "new_name": "Vaquería",
+    "matched_city_name": "Vaquería",
+    "id_ciudad": "VA200",
+    "new_ciudadesid": "d8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VAQUERÍA"
+  },
+  {
+    "new_name": "Villa Del Rosario",
+    "matched_city_name": "Villa del Rosario",
+    "id_ciudad": "VI202",
+    "new_ciudadesid": "dc371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA DEL ROSARIO"
+  },
+  {
+    "new_name": "Villa Elisa",
+    "matched_city_name": "Villa Elisa",
+    "id_ciudad": "VI203",
+    "new_ciudadesid": "de371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA ELISA"
+  },
+  {
+    "new_name": "Villa Florida",
+    "matched_city_name": "Villa Florida",
+    "id_ciudad": "VI204",
+    "new_ciudadesid": "e0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA FLORIDA"
+  },
+  {
+    "new_name": "Villa Franca",
+    "matched_city_name": "Villa Franca",
+    "id_ciudad": "VI205",
+    "new_ciudadesid": "e2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA FRANCA"
+  },
+  {
+    "new_name": "Villa Hayes",
+    "matched_city_name": "Villa Hayes",
+    "id_ciudad": "VI206",
+    "new_ciudadesid": "e4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA HAYES"
+  },
+  {
+    "new_name": "Villa Oliva",
+    "matched_city_name": "Villa Oliva",
+    "id_ciudad": "VI207",
+    "new_ciudadesid": "e6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA OLIVA"
+  },
+  {
+    "new_name": "Villa Ygatimi",
+    "matched_city_name": "Villa Ygatimí",
+    "id_ciudad": "VI248",
+    "new_ciudadesid": "e8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLA YGATIMÍ"
+  },
+  {
+    "new_name": "Villalbín",
+    "matched_city_name": "Villalbín",
+    "id_ciudad": "VI208",
+    "new_ciudadesid": "ea371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLALBÍN"
+  },
+  {
+    "new_name": "Villarrica",
+    "matched_city_name": "Villarrica",
+    "id_ciudad": "VI209",
+    "new_ciudadesid": "ec371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLARRICA"
+  },
+  {
+    "new_name": "Villeta",
+    "matched_city_name": "Villeta",
+    "id_ciudad": "VI210",
+    "new_ciudadesid": "ee371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "VILLETA"
+  },
+  {
+    "new_name": "Yabebyry",
+    "matched_city_name": "Yabebyry",
+    "id_ciudad": "YA211",
+    "new_ciudadesid": "f0371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YABEBYRY"
+  },
+  {
+    "new_name": "Yaguarón",
+    "matched_city_name": "Yaguarón",
+    "id_ciudad": "YA237",
+    "new_ciudadesid": "f2371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YAGUARÓN"
+  },
+  {
+    "new_name": "Yasy Kañy",
+    "matched_city_name": "Yasy Cañy",
+    "id_ciudad": "YA249",
+    "new_ciudadesid": "f4371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YASY KAÑY"
+  },
+  {
+    "new_name": "Yataity Del Guairá",
+    "matched_city_name": "Yataity del Guairá",
+    "id_ciudad": "YA212",
+    "new_ciudadesid": "f6371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YATAITY DEL GUAIRÁ"
+  },
+  {
+    "new_name": "Yataity Del Norte",
+    "matched_city_name": "Yataity del Norte",
+    "id_ciudad": "YA213",
+    "new_ciudadesid": "f8371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YATAITY DEL NORTE"
+  },
+  {
+    "new_name": "Yatytay",
+    "matched_city_name": "Yatytay",
+    "id_ciudad": "YA214",
+    "new_ciudadesid": "fa371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YATYTAY"
+  },
+  {
+    "new_name": "Yby Yau",
+    "matched_city_name": "Yby Yaú",
+    "id_ciudad": "YB215",
+    "new_ciudadesid": "fc371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YBY YAU"
+  },
+  {
+    "new_name": "Ybycuí",
+    "matched_city_name": "Ybycuí",
+    "id_ciudad": "YB238",
+    "new_ciudadesid": "fe371e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YBYCUÍ"
+  },
+  {
+    "new_name": "Ybytymí",
+    "matched_city_name": "Ybytymí",
+    "id_ciudad": "YB239",
+    "new_ciudadesid": "00381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YBYTYMÍ"
+  },
+  {
+    "new_name": "Yguazú",
+    "matched_city_name": "Yguazú",
+    "id_ciudad": "YG216",
+    "new_ciudadesid": "02381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YGUAZÚ"
+  },
+  {
+    "new_name": "Yhú",
+    "matched_city_name": "Yhú",
+    "id_ciudad": "YH217",
+    "new_ciudadesid": "04381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YHÚ"
+  },
+  {
+    "new_name": "Ypacarai",
+    "matched_city_name": "Ypacaraí",
+    "id_ciudad": "YP218",
+    "new_ciudadesid": "06381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YPACARAI"
+  },
+  {
+    "new_name": "Ypane",
+    "matched_city_name": "Ypané",
+    "id_ciudad": "YP219",
+    "new_ciudadesid": "08381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YPANE"
+  },
+  {
+    "new_name": "Ypejhú",
+    "matched_city_name": "Ypejhú",
+    "id_ciudad": "YP250",
+    "new_ciudadesid": "0a381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YPEJHÚ"
+  },
+  {
+    "new_name": "Yrybucua",
+    "matched_city_name": "Yrybucuá",
+    "id_ciudad": "YR220",
+    "new_ciudadesid": "0c381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YRYBUCUA"
+  },
+  {
+    "new_name": "Yuty",
+    "matched_city_name": "Yuti",
+    "id_ciudad": "YU221",
+    "new_ciudadesid": "0e381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "YUTY"
+  },
+  {
+    "new_name": "Zanja Pyta",
+    "matched_city_name": "Zanja Pytá",
+    "id_ciudad": "ZA254",
+    "new_ciudadesid": "10381e6e-1a24-ef11-840b-000d3ac19288",
+    "new_codigo": "ZANJA PYTA"
+  }
+]
