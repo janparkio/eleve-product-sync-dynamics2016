@@ -253,6 +253,33 @@ function process_hubspot_data($request_body)
         'codigo_origen' => str_replace(' ', '', $properties['codigo_origen']['value'] ?? "OL-ODH"),
     ];
 
+    // Process preferred_contact_channel
+    $preferred_contact_channel = $properties['prefered_contact_channel']['value'] ?? null;
+    $contact_channel_mapping = [
+        "whatsapp" => 4,
+        "email" => 2,
+        "call" => 3,
+        "webchat" => 1,
+        "messenger" => 1,
+        "sms" => 1,
+    ];
+    $mapped_channels = [];
+    if (is_array($preferred_contact_channel)) {
+        foreach ($preferred_contact_channel as $channel) {
+            if (isset($contact_channel_mapping[$channel])) {
+                $mapped_channels[] = $contact_channel_mapping[$channel];
+            }
+        }
+    }
+    $mapped_channels = array_unique($mapped_channels); // Remove duplicates
+    sort($mapped_channels); // Sort the numbers
+    $hubspot_data['preferred_contact_channel_mapped'] = implode(",", $mapped_channels); // Join with commas
+
+    // Ensure a default value if no mapping is found
+    if (empty($hubspot_data['preferred_contact_channel_mapped'])) {
+        $hubspot_data['preferred_contact_channel_mapped'] = "1"; // Default to 1
+    }
+
     // Validate numero_de_cedula
     if (!$hubspot_data['numero_de_cedula'] || $hubspot_data['numero_de_cedula'] < 500000 || $hubspot_data['numero_de_cedula'] > 9999999) {
         $hubspot_data['numero_de_cedula'] = $hubspot_data['hs_object_id'];
@@ -332,7 +359,7 @@ function sync_product($hubspot_data)
         "_new_sede_value" => "4a893dd3-373e-ef11-a316-002248e133a1", //optional
         "new_idhubspot" => $hubspot_data['hs_object_id'], //optional
         "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'], //optional
-        "preferredcontactmethodcode" => 1, //$hubspot_data['prefered_contact_channel'] -> not ready yet
+        "preferredcontactmethodcode" => $hubspot_data['preferred_contact_channel_mapped'],
         "statecode" => 0,
         "statuscode" => 100000002,
 
