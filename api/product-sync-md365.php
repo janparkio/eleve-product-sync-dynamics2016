@@ -5,11 +5,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Send the Content-Type header first
-header('Content-Type: application/json');
-
-// Start output buffering
+// Start output buffering at the very beginning
 ob_start(); 
+
+// Send the Content-Type header 
+header('Content-Type: application/json');
 
 // Configuration
 $config = [
