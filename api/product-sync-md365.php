@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Start output buffering at the very beginning
-ob_start(); 
+ob_start();
 
 // Send the Content-Type header 
 header('Content-Type: application/json');
@@ -174,6 +174,9 @@ function sync_lead_new($lead_data)
 
     // Execute the request
     $response = curl_exec($ch);
+
+    // Check if the response is valid JSON
+    $result = json_decode($response, true);
 
     // Check for errors
     if (curl_errno($ch)) {
@@ -373,26 +376,26 @@ function sync_product($hubspot_data)
     ];
 
     // Sync with new API
-    $new_result = sync_lead_new($new_lead_data);
-    if ($new_result) {
+    $api_result = sync_lead_new($new_lead_data);
+    if ($api_result) {
         debug_log("Successfully synced with new API.");
-        debug_log("New API response: " . json_encode($new_result), true);
+        debug_log("New API response: " . json_encode($api_result), true);
     } else {
         debug_log("Failed to sync with new API.");
         return null;
     }
 
-    // Prepare response similar to the old script
+    // Prepare response similar to product-sync-md2016.php
     $response_data = [
         'hs_execution_state' => 'complete',
         'hs_status_code' => 200,
-        'hs_server_response' => $new_result, // Keep the full server response
+        'hs_server_response' => $api_result, // Use $api_result here
         'id_carrera' => $matched_product['md_id_carrera'],
-        'md_json_sent_md365' => json_encode([ // Renamed from md_json_sent
-            'data_sent' => $new_lead_data, // Use new_lead_data instead of data_to_send
-            'server_response' => $new_result,
+        'md_object_id' => $hubspot_data['tmp_md_object_id'],
+        'md_json_sent_md365' => json_encode([ 
+            'data_sent' => $new_lead_data, 
+            'server_response' => $api_result, // Use $api_result here
         ], JSON_UNESCAPED_UNICODE),
-        'hs_server_response.respuesta' => $new_result['respuesta'] ?? null,
     ];
 
     return $response_data;
