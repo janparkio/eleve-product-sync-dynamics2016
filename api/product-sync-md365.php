@@ -5,6 +5,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Send the Content-Type header first
+header('Content-Type: application/json');
+
+// Start output buffering
+ob_start(); 
+
 // Configuration
 $config = [
     'old_api_url' => 'http://190.128.233.147:8088/api/ContactOPP/',
@@ -380,13 +386,13 @@ function sync_product($hubspot_data)
     $response_data = [
         'hs_execution_state' => 'complete',
         'hs_status_code' => 200,
-        'hs_server_response' => $new_result,
+        'hs_server_response' => $new_result, // Keep the full server response
         'id_carrera' => $matched_product['md_id_carrera'],
-        'md_object_id' => $hubspot_data['tmp_md_object_id'],
-        'tmp_json_sent_md365' => json_encode([
-            'data_sent' => $new_lead_data,
+        'md_json_sent_md365' => json_encode([ // Renamed from md_json_sent
+            'data_sent' => $new_lead_data, // Use new_lead_data instead of data_to_send
             'server_response' => $new_result,
         ], JSON_UNESCAPED_UNICODE),
+        'hs_server_response.respuesta' => $new_result['respuesta'] ?? null,
     ];
 
     return $response_data;
@@ -402,7 +408,6 @@ define('DEBUG_VERBOSE', false);
 $result = sync_product($hubspot_data);
 
 if ($result) {
-    header('Content-Type: application/json');
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
 } else {
     $error_response = [
@@ -410,9 +415,11 @@ if ($result) {
         'hs_status_code' => 500,
         'hs_server_response' => 'Failed to sync lead.',
     ];
-    header('Content-Type: application/json');
     echo json_encode($error_response, JSON_UNESCAPED_UNICODE);
 }
+
+// Send the buffered output
+ob_end_flush();
 
 // Example usage
 /*
