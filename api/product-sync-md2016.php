@@ -143,4 +143,3 @@ if (isset($token_data['access_token'])) {
     header('Content-Type: application/json');
     echo json_encode($error_response, JSON_UNESCAPED_UNICODE);
 }
-?>
