@@ -11,6 +11,7 @@ RUN a2enmod rewrite
 
 # Copy the application code
 COPY . /var/www/html
+COPY api/products.json api/cities.json /var/www/html/api/
 
 # Set working directory
 WORKDIR /var/www/html
