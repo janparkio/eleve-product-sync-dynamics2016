@@ -1,16 +1,23 @@
-FROM php:8.2-fpm-alpine
+# Use PHP 8.2 CLI Alpine as base image
+FROM php:8.2-cli-alpine
 
-# Install JavaScript tools (if needed)
-# RUN apk add --no-cache nodejs npm
+# Install necessary packages and PHP extensions
+RUN apk add --no-cache \
+    curl \
+    libcurl \
+    && docker-php-ext-install curl
 
-# Copy your project files
+# Copy the application code
 COPY . /app
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Expose the web server port
-EXPOSE 80
+# Create a simple entry point script
+RUN echo '#!/bin/sh' > /app/entrypoint.sh && \
+    echo 'php /app/api/product-sync-md365.php' >> /app/entrypoint.sh && \
+    echo 'php /app/api/product-sync-md2016.php' >> /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh
 
-# Define the command to run the application
-CMD ["php-fpm"]
+# Set the entry point
+ENTRYPOINT ["/app/entrypoint.sh"]
