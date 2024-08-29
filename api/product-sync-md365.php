@@ -222,7 +222,6 @@ function process_hubspot_data($request_body)
 
     $hubspot_data = [
         'hs_latest_source' => $properties['hs_latest_source']['value'] ?? null,
-        'recent_conversion_date' => $properties['recent_conversion_date']['value'] ?? null,
         'hs_object_id' => $properties['hs_object_id']['value'] ?? null,
         'tmp_product_interest_dynamics_landing' => $properties['tmp_product_interest_dynamics_landing']['value'] ?? null,
         'hs_latest_source_data_1' => $properties['hs_latest_source_data_1']['value'] ?? null,
@@ -241,6 +240,7 @@ function process_hubspot_data($request_body)
         'tmp_md_first_json_sent' => $properties['tmp_md_first_json_sent']['value'] ?? null,
         'tmp_md_object_id' => $properties['md_object_id']['value'] ?? null,
         'codigo_origen' => str_replace(' ', '', $properties['codigo_origen']['value'] ?? "OL-ODH"),
+        'recent_conversion_date' => $properties['recent_conversion_date']['value'] ?? null,
     ];
 
     // Process preferred_contact_channel
@@ -329,6 +329,23 @@ function sync_product($hubspot_data)
             $new_origen_value = '1ef5b097-d2f1-ee11-a1fe-002248371974'; // Use default value if matching fails
         }
 
+        // Convert and format the date
+        $recent_conversion_date = $hubspot_data['recent_conversion_date'];
+        $formatted_date_recent_conversion_date = null;
+        
+        if ($recent_conversion_date) {
+            // Check if it's a Unix millisecond timestamp
+            if (is_numeric($recent_conversion_date) && strlen($recent_conversion_date) == 13) {
+                // Convert milliseconds to seconds
+                $timestamp = $recent_conversion_date / 1000;
+                $formatted_date_recent_conversion_date = date('Y-m-d\TH:i:s.v', $timestamp);
+            } else {
+                // Assume it's already in ISO 8601 format
+                $date = new DateTime($recent_conversion_date);
+                $formatted_date_recent_conversion_date = $date->format('Y-m-d\TH:i:s.v');
+            }
+        }
+
         // Prepare lead data for new API
         $new_lead_data = [
             "leadid" => "", //optional
@@ -345,7 +362,7 @@ function sync_product($hubspot_data)
             "new_idhubspot" => $hubspot_data['hs_object_id'], //optional
             "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'], //optional
             "preferredcontactmethodcode" => $hubspot_data['preferred_contact_channel_mapped'],
-            "crd9f_recent_conversion_date" => $hubspot_data['recent_conversion_date'],
+            "crd9f_recent_conversion_date" => $formatted_date_recent_conversion_date,
             // No longer send statecode and statuscode
             // "statecode" => 0,
             // "statuscode" => 100000002,
