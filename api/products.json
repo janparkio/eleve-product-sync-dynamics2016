@@ -1,7 +1,7 @@
 [
   {
       "hs_slug_code": "wz-mc-gn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "ADULTSCON",
       "hs_nombre_producto": "MasterClass - Wizard",
       "md_id_carrera": "a2fd0a15-7194-ee11-b98e-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -11,7 +11,7 @@
   },
   {
       "hs_slug_code": "wz-cv-gn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Colonia de vacaciones - Wizard",
       "md_id_carrera": "698cdf4d-7194-ee11-b98e-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -21,7 +21,7 @@
   },
   {
       "hs_slug_code": "wz-cb-gn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "ADULTSCON",
       "hs_nombre_producto": "Conversation Club - Wizard",
       "md_id_carrera": "8bcf1993-f6cf-ee11-b993-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -31,7 +31,7 @@
   },
   {
       "hs_slug_code": "wz-int-pr-cn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "ADULTSCON",
       "hs_nombre_producto": "Wizard-Intensive-Presencial-Connections",
       "md_id_carrera": "e6a867dc-2cd7-ee11-b993-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -41,7 +41,7 @@
   },
   {
       "hs_slug_code": "wz-int-on-cn",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "ADULTCONON",
       "hs_nombre_producto": "Wizard-Intensive-Online-Connections",
       "md_id_carrera": "b987a80a-2dd7-ee11-b993-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -51,7 +51,7 @@
   },
   {
       "hs_slug_code": "wz-kids-cn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Kids - Generico - Connections",
       "md_id_carrera": "b4d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -61,7 +61,7 @@
   },
   {
       "hs_slug_code": "wz-kids-in",
-      "md_codigo_carrera": "INTERACTIV",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Kids - Generico - Interactive",
       "md_id_carrera": "b6d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -71,7 +71,7 @@
   },
   {
       "hs_slug_code": "wz-teens-cn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "TEENSCON",
       "hs_nombre_producto": "Wizard - Teens - Generico - Connections",
       "md_id_carrera": "bad7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -81,7 +81,7 @@
   },
   {
       "hs_slug_code": "wz-teens-in",
-      "md_codigo_carrera": "INTERACTIV",
+      "md_codigo_carrera": "INTTEENS",
       "hs_nombre_producto": "Wizard - Teens - Generico - Interactive",
       "md_id_carrera": "bcd7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -91,7 +91,7 @@
   },
   {
       "hs_slug_code": "wz-tots-cn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Tots - Generico - Connections",
       "md_id_carrera": "aed7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -101,7 +101,7 @@
   },
   {
       "hs_slug_code": "wz-tots-in",
-      "md_codigo_carrera": "INTERACTIV",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Tots - Generico - Interactive",
       "md_id_carrera": "b0d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -111,7 +111,7 @@
   },
   {
       "hs_slug_code": "wz-w-cn",
-      "md_codigo_carrera": "CONECTION",
+      "md_codigo_carrera": "ADULTSCON",
       "hs_nombre_producto": "Wizard - W - Generico - Connections",
       "md_id_carrera": "c0d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -121,7 +121,7 @@
   },
   {
       "hs_slug_code": "wz-w-in",
-      "md_codigo_carrera": "INTERACTIV",
+      "md_codigo_carrera": "INTADULTS",
       "hs_nombre_producto": "Wizard - W - Generico - Interactive",
       "md_id_carrera": "c2d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -131,7 +131,7 @@
   },
   {
       "hs_slug_code": "wz-kids-on",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Kids - Generico - Online",
       "md_id_carrera": "b8d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -141,7 +141,7 @@
   },
   {
       "hs_slug_code": "wz-teens-on",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "TEENSCON",
       "hs_nombre_producto": "Wizard - Teens - Generico - Online",
       "md_id_carrera": "bed7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -151,7 +151,7 @@
   },
   {
       "hs_slug_code": "wz-tots-on",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "CONKIDS",
       "hs_nombre_producto": "Wizard - Tots - Generico - Online",
       "md_id_carrera": "b2d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -161,7 +161,7 @@
   },
   {
       "hs_slug_code": "wz-w-on",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "ADULTCONON",
       "hs_nombre_producto": "Wizard - W - Generico - Online",
       "md_id_carrera": "c4d7430d-23fe-ec11-b945-00505689053e",
       "md_tipo_carrera": "IDIOMAS",
@@ -171,7 +171,7 @@
   },
   {
       "hs_slug_code": "wz-in-on",
-      "md_codigo_carrera": "INTERAC-ON",
+      "md_codigo_carrera": "ADULTINTON",
       "hs_nombre_producto": "Wizard - W - Online - Interactive",
       "md_id_carrera": "d700224c-9ebf-ee11-b993-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
@@ -181,7 +181,7 @@
   },
   {
       "hs_slug_code": "wz-cn-on",
-      "md_codigo_carrera": "CONECT-ON",
+      "md_codigo_carrera": "ADULTCONON",
       "hs_nombre_producto": "Wizard - W - Online - Connections",
       "md_id_carrera": "2840a076-9fbf-ee11-b993-0050568952e6",
       "md_tipo_carrera": "IDIOMAS",
