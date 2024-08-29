@@ -222,6 +222,7 @@ function process_hubspot_data($request_body)
 
     $hubspot_data = [
         'hs_latest_source' => $properties['hs_latest_source']['value'] ?? null,
+        'recent_conversion_date' => $properties['recent_conversion_date']['value'] ?? null,
         'hs_object_id' => $properties['hs_object_id']['value'] ?? null,
         'tmp_product_interest_dynamics_landing' => $properties['tmp_product_interest_dynamics_landing']['value'] ?? null,
         'hs_latest_source_data_1' => $properties['hs_latest_source_data_1']['value'] ?? null,
@@ -344,6 +345,7 @@ function sync_product($hubspot_data)
             "new_idhubspot" => $hubspot_data['hs_object_id'], //optional
             "crd9f_clasificaciondeproducto" => $mapped_program['new_clasificacion'], //optional
             "preferredcontactmethodcode" => $hubspot_data['preferred_contact_channel_mapped'],
+            "crd9f_recent_conversion_date" => $hubspot_data['recent_conversion_date'],
             // No longer send statecode and statuscode
             // "statecode" => 0,
             // "statuscode" => 100000002,
